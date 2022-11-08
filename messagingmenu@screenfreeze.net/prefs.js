@@ -31,7 +31,7 @@ function createColorSettingWidget() {
     }
   });
 
-  hbox1.prepend(color_setting_label, true, true, 0);
+  hbox1.prepend(color_setting_label);
   hbox1.append(color_setting_string);
 
   return hbox1;
@@ -61,7 +61,7 @@ function createNotificationSettingsWidget() {
     settings.set_boolean("notify-email", button.active);
   });
 
-  hbox1.prepend(email_setting_label, true, true, 0);
+  hbox1.prepend(email_setting_label);
   hbox1.append(email_setting_switch);
   vbox.append(hbox1);
 
@@ -83,7 +83,7 @@ function createNotificationSettingsWidget() {
     settings.set_boolean("notify-chat", button.active);
   });
 
-  hbox2.prepend(chat_setting_label, true, true, 0);
+  hbox2.prepend(chat_setting_label);
   hbox2.append(chat_setting_switch);
   vbox.append(hbox2);
 
@@ -105,7 +105,7 @@ function createNotificationSettingsWidget() {
     settings.set_boolean("notify-mblogging", button.active);
   });
 
-  hbox3.prepend(mblogging_setting_label, true, true, 0);
+  hbox3.prepend(mblogging_setting_label);
   hbox3.append(mblogging_setting_switch);
   vbox.append(hbox3);
 

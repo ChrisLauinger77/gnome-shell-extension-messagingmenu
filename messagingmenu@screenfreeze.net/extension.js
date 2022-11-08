@@ -429,7 +429,7 @@ function _checkNotifyEmailByID(source) {
   let result = false;
   for (let a_Notifier of availableNotifiers) {
     let app_id = a_Notifier.get_id(); //e.g. thunderbird.desktop
-    if (source.app.get_id().toLowerCase() == app_id.toLowerCase()) {
+    if (app_id.toLowerCase().includes(source.app.get_id().toLowerCase())) {
       result = true;
     }
   }
@@ -440,7 +440,7 @@ function _checkNotifyEmailByName(source) {
   let result = false;
   for (let a_Notifier of availableNotifiers) {
     let app_name = a_Notifier.get_name(); //e.g. Thunderbird Mail
-    if (source.title.toLowerCase() == app_name.toLowerCase()) {
+    if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
       result = true;
     }
   }
@@ -451,7 +451,7 @@ function _checkNotifyHiddenEmail(source) {
   let result = false;
   for (let a_Notifier of compatible_hidden_Email_Notifiers) {
     let app_name = a_Notifier; //e.g. Mailnag
-    if (source.title.toLowerCase() == app_name.toLowerCase()) {
+    if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
       result = true;
     }
   }
@@ -462,7 +462,7 @@ function _checkNotifyMBlog(source) {
   let result = false;
   for (let a_Notifier of compatible_hidden_MBlog_Notifiers) {
     let app_name = a_Notifier; //e.g. friends
-    if (source.title.toLowerCase() == app_name.toLowerCase()) {
+    if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
       result = true;
     }
   }
