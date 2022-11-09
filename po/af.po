@@ -1,42 +1,48 @@
-# Afrikaans translations for PACKAGE package.
-# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Andreas Wilhelm <screenfreeze.net@gmail.com>, 2012.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Messaging Menu Version 4\n"
-"Report-Msgid-Bugs-To: https://github.com/screenfreeze/messagingmenu/issues\n"
-"POT-Creation-Date: 2013-02-11 23:13+0000\n"
-"PO-Revision-Date: 2013-05-18 15:20+0200\n"
-"Last-Translator: Siôn Le Roux <sion@sionleroux.com>\n"
-"Language-Team: Afrikaans\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-11 14:44+0100\n"
+"PO-Revision-Date: 2022-11-11 14:46+0100\n"
+"Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
+"Language-Team: \n"
 "Language: af\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2\n"
 
-#: prefs.js:17
-msgid "Notification Color (Hex):"
-msgstr "Kennisgewing Kleur (Hex):"
-
-#: prefs.js:40
-msgid "Email Notification:"
-msgstr "E-pos Kennisgewing:"
-
-#: prefs.js:55
-msgid "Chat Notification:"
-msgstr "Chat Kennisgewing:"
-
-#: prefs.js:70
-msgid "Micro Blogging Notification:"
-msgstr "Mikro Blog Kennisgewing:"
-
-#: extension.js:63
+#: messagingmenu@lauinger-clan.de/extension.js:147
 msgid "Compose New Message"
 msgstr "Skryf Nuwe Boodskap"
 
-#: extension.js:64
+#: messagingmenu@lauinger-clan.de/extension.js:148
 msgid "Contacts"
 msgstr "Kontakte"
+
+#: messagingmenu@lauinger-clan.de/extension.js:298
+msgid "Settings"
+msgstr "Instellings"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:18
+msgid "Notification Color (Hex):"
+msgstr "Kennisgewing Kleur (Hex):"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:51
+msgid "Email Notification:"
+msgstr "E-pos Kennisgewing:"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:73
+msgid "Chat Notification:"
+msgstr "Chat Kennisgewing:"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:95
+msgid "Micro Blogging Notification:"
+msgstr "Mikro Blog Kennisgewing:"
+

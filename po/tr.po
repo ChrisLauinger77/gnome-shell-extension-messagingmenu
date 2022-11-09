@@ -6,38 +6,43 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
-"Report-Msgid-Bugs-To: https://github.com/screenfreeze/messagingmenu/issues\n"
-"POT-Creation-Date: 2013-05-17 16:10+0200\n"
-"PO-Revision-Date: 2013-06-12 21:39+0300\n"
-"Last-Translator: Osman Karagöz <osmank3@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-11 14:49+0100\n"
+"PO-Revision-Date: 2022-11-11 15:29+0100\n"
+"Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Turkish <>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 3.2\n"
 
-#: prefs.js:17
-msgid "Notification Color (Hex):"
-msgstr "Bildirim Rengi (Hex):"
-
-#: prefs.js:40
-msgid "Email Notification:"
-msgstr "Eposta Bildirimi:"
-
-#: prefs.js:55
-msgid "Chat Notification:"
-msgstr "Sohbet Bildirimi:"
-
-#: prefs.js:70
-msgid "Micro Blogging Notification:"
-msgstr "Mikroblog Bildirimi:"
-
-#: extension.js:63
+#: messagingmenu@lauinger-clan.de/extension.js:147
 msgid "Compose New Message"
 msgstr "Yeni İleti Oluştur"
 
-#: extension.js:64
+#: messagingmenu@lauinger-clan.de/extension.js:148
 msgid "Contacts"
 msgstr "Kişiler"
+
+#: messagingmenu@lauinger-clan.de/extension.js:298
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:18
+msgid "Notification Color (Hex):"
+msgstr "Bildirim Rengi (Hex):"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:51
+msgid "Email Notification:"
+msgstr "Eposta Bildirimi:"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:73
+msgid "Chat Notification:"
+msgstr "Sohbet Bildirimi:"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:95
+msgid "Micro Blogging Notification:"
+msgstr "Mikroblog Bildirimi:"
+

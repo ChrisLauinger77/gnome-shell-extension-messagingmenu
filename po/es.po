@@ -6,37 +6,43 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
-"Report-Msgid-Bugs-To: https://github.com/screenfreeze/messagingmenu/issues\n"
-"POT-Creation-Date: 2012-11-03 17:36+0100\n"
-"PO-Revision-Date: 2012-11-03 17:41+0100\n"
-"Last-Translator: Andreas Wilhelm <screenfreeze.net@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-11 14:49+0100\n"
+"PO-Revision-Date: 2022-11-11 15:26+0100\n"
+"Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2\n"
 
-#: prefs.js:17
-msgid "Notification Color (Hex):"
-msgstr "Color de la Notificación (Hex):"
-
-#: prefs.js:40
-msgid "Email Notification:"
-msgstr "Correo de Notificación:"
-
-#: prefs.js:55
-msgid "Chat Notification:"
-msgstr "Notificación Chat:"
-
-#: prefs.js:70
-msgid "Micro Blogging Notification:"
-msgstr "Notificación Microblog:"
-
-#: extension.js:63
+#: messagingmenu@lauinger-clan.de/extension.js:147
 msgid "Compose New Message"
 msgstr "Crear un Nuevo Mensaje"
 
-#: extension.js:64
+#: messagingmenu@lauinger-clan.de/extension.js:148
 msgid "Contacts"
 msgstr "Contactos"
+
+#: messagingmenu@lauinger-clan.de/extension.js:298
+msgid "Settings"
+msgstr "Ajustes"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:18
+msgid "Notification Color (Hex):"
+msgstr "Color de la Notificación (Hex):"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:51
+msgid "Email Notification:"
+msgstr "Correo de Notificación:"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:73
+msgid "Chat Notification:"
+msgstr "Notificación Chat:"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:95
+msgid "Micro Blogging Notification:"
+msgstr "Notificación Microblog:"
+

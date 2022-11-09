@@ -1,7 +1,7 @@
 #=============================================================================
-UUID=messagingmenu@screenfreeze.net
+UUID=messagingmenu@lauinger-clan.de
 # GitHub doesn't accept @ in filesnames:
-GHID=messagingmenu.screenfreeze.net
+GHID=messagingmenu.lauinger-clan.de
 NAME=messagingmenu
 FILES=metadata.json *.js stylesheet.css schemas icons locale/**/ LICENSE.txt
 INSTALLDIR=$(HOME)/.local/share/gnome-shell/extensions
@@ -23,17 +23,14 @@ install: zip
 uninstall:
 	rm -r $(INSTALLDIR)/$(UUID)
 
-all: clean locales schemas
+all: schemas pack
 
 clean:
 	rm -f $(GHID).zip* $(UUID)/schemas/gschemas.compiled $(UUID)/LICENSE.txt
 	rm -rf $(UUID)/locale/**/
 
-locales: $(MSGOBJS)
-
-$(UUID)/locale/%/LC_MESSAGES/$(NAME).mo: po/%.po
-	mkdir -p $(dir $@)
-	msgfmt -c -o $@ po/$*.po
+locales:
+	sh update-translation-po-files.sh
 
 schemas: $(UUID)/schemas/
 	glib-compile-schemas $(UUID)/schemas
@@ -43,3 +40,6 @@ $(UUID)/LICENSE.txt: LICENSE.txt
 
 zip: all $(UUID)/LICENSE.txt
 	cd $(UUID); zip -rq ../$(GHID).zip $(FILES:%=./%)
+
+pack: $(UUID)
+	cd $(UUID);gnome-extensions pack --podir=../po/ --out-dir=../ --extra-source=prefs.ui --extra-source=\icons;cd ..;mv messagingmenu@lauinger-clan.de.shell-extension.zip messagingmenu\@lauinger-clan.de.zip

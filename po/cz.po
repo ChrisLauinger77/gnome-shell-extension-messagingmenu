@@ -6,37 +6,43 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
-"Report-Msgid-Bugs-To: https://github.com/screenfreeze/messagingmenu/issues\n"
-"POT-Creation-Date: 2013-02-02 17:36+0100\n"
-"PO-Revision-Date: 2013-02-02 17:38+0100\n"
-"Last-Translator: Karel Mácha <karel.macha@karlitos.net>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-11 14:49+0100\n"
+"PO-Revision-Date: 2022-11-11 15:26+0100\n"
+"Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Czech\n"
 "Language: cz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 3.2\n"
 
-#: prefs.js:17
-msgid "Notification Color (Hex):"
-msgstr "Barva upozornění (Hex)"
-
-#: prefs.js:40
-msgid "Email Notification:"
-msgstr "Upozornění na email"
-
-#: prefs.js:55
-msgid "Chat Notification:"
-msgstr "Upozornění na zprávu v chatu"
-
-#: prefs.js:70
-msgid "Micro Blogging Notification:"
-msgstr "Upozornění na příspěvek na micro-blogu"
-
-#: extension.js:63
+#: messagingmenu@lauinger-clan.de/extension.js:147
 msgid "Compose New Message"
 msgstr "Vytvořit novou zprávu"
 
-#: extension.js:64
+#: messagingmenu@lauinger-clan.de/extension.js:148
 msgid "Contacts"
 msgstr "Kontakty"
+
+#: messagingmenu@lauinger-clan.de/extension.js:298
+msgid "Settings"
+msgstr "Nastavení"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:18
+msgid "Notification Color (Hex):"
+msgstr "Barva upozornění (Hex)"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:51
+msgid "Email Notification:"
+msgstr "Upozornění na email:"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:73
+msgid "Chat Notification:"
+msgstr "Upozornění na zprávu v chatu:"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:95
+msgid "Micro Blogging Notification:"
+msgstr "Upozornění na příspěvek na micro-blogu:"
+

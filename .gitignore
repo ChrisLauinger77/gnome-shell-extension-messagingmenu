@@ -1,6 +1,8 @@
 **/locale/*/
-messagingmenu@lauinger-clan.de.zip*
+messagingmenu@lauinger-clan.de.zip
+messagingmenu@lauinger-clan.de.shell-extension.zip
 gschemas.compiled
-messagingmenu\@lauinger-clan.de/.prettierrc
-
-
+.prettierrc
+*.mo
+*.po~
+.editorconfig

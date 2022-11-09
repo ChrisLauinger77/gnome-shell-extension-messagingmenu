@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="messagingmenu">
+  <object class="AdwPreferencesPage" id="messagingmenu_page">
+    <property name="name">messagingmenu_page</property>
+    <property name="title" translatable="yes">Settings</property>
+    <property name="icon-name">folder-symbolic</property>
+    <child>
+      <object class="AdwPreferencesGroup" id="messagingmenu_group">
+        <property name="title" translatable="yes">Settings</property>
+        <child>
+          <object class="AdwActionRow" id="messagingmenu_row1">
+            <property name="title" translatable="yes">Email Notification:</property>
+            <property name="activatable-widget">email_setting_switch</property>
+            <child>
+              <object class="GtkSwitch" id="email_setting_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+          </child>
+          <child>
+          <object class="AdwActionRow" id="messagingmenu_row2">
+            <property name="title" translatable="yes">Chat Notification:</property>
+            <property name="activatable-widget">chat_setting_switch</property>
+            <child>
+              <object class="GtkSwitch" id="chat_setting_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+          </child>
+          <child>
+          <object class="AdwActionRow" id="messagingmenu_row3">
+            <property name="title" translatable="yes">Micro Blogging Notification:</property>
+            <property name="activatable-widget">mblogging_setting_switch</property>
+            <child>
+              <object class="GtkSwitch" id="mblogging_setting_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+          </child>
+          <child>
+          <object class="AdwActionRow" id="messagingmenu_row4">
+            <property name="title" translatable="yes">Notification Color (Hex):</property>
+            <property name="activatable-widget">color_setting_string</property>
+            <child>
+              <object class="GtkEntry" id="color_setting_string">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

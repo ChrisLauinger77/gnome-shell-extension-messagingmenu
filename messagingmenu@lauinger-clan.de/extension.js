@@ -292,6 +292,15 @@ const MessageMenu = GObject.registerClass(
         let newLauncher = new MessageMenuItem(mb_app);
         this.menu.addMenuItem(newLauncher);
       }
+
+      // Add an entry-point for settings
+      this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
+      const settingsItem = this.menu.addAction(_("Settings"), () =>
+        ExtensionUtils.openPrefs()
+      );
+      // Ensure the settings are unavailable when the screen is locked
+      settingsItem.visible = Main.sessionMode.allowSettings;
+      this.menu._settingsActions[Me.uuid] = settingsItem;
     }
 
     _getAppsEMAIL(appsys) {
