@@ -19,6 +19,9 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const ICON_SIZE = 22;
 
+const _rgbToHex = (r, g, b) =>
+  "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("");
+
 let _indicator;
 let originalUpdateCount;
 let originalStyle;
@@ -478,10 +481,26 @@ function _checkNotifyMBlog(source) {
   return result;
 }
 
+function isSupported() {
+  let current_version = Config.PACKAGE_VERSION.split(".");
+  return current_version[0] >= 42 ? true : false;
+}
+
 function _changeStatusIcon(newMessage) {
   // Change Status Icon in Panel
   if (newMessage && !iconChanged) {
-    let color = settings.get_string("color");
+    let color;
+    if (isSupported) {
+      let strcolor = settings.get_string("color-rgba");
+      let arrColor = strcolor.replace("rgb(", "").replace(")", "").split(",");
+      color = _rgbToHex(
+        parseInt(arrColor[0]),
+        parseInt(arrColor[1]),
+        parseInt(arrColor[2])
+      );
+    } else {
+      color = settings.get_string("color");
+    }
     iconBox.set_style("color: " + color + ";");
     iconChanged = true;
   } else if (!newMessage && iconChanged) {

@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id="org.gnome.shell.extensions.messagingmenu" 
+  <schema id="org.gnome.shell.extensions.messagingmenu"
       path="/org/gnome/shell/extensions/messagingmenu/">
     <key name="notify-email" type="b">
       <default>true</default>
@@ -23,8 +23,13 @@
     </key>
     <key name="color" type="s">
       <default>'#ff0000'</default>
-      <summary>Notification Color</summary>
-      <description>The color used to paint the Icon</description>
+      <summary>Notification Color HEX</summary>
+      <description>The color used to paint the Icon(old version since GNOME 41)</description>
+    </key>
+    <key name="color-rgba" type="s">
+      <default>'rgba(255,0,0,1)'</default>
+      <summary>Notification Color RGBA</summary>
+      <description>The color used to paint the Icon(new version since GNOME 42)</description>
     </key>
   </schema>
 </schemalist>

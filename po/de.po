@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-11 14:44+0100\n"
-"PO-Revision-Date: 2022-11-11 14:45+0100\n"
+"POT-Creation-Date: 2022-11-14 22:57+0100\n"
+"PO-Revision-Date: 2022-11-14 22:58+0100\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -30,19 +30,23 @@ msgstr "Kontakte"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:18
+#: messagingmenu@lauinger-clan.de/prefs.js:8
+msgid "Notification Color (RGB):"
+msgstr "Benachrichtigungsfarbe (RGB):"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:20
 msgid "Notification Color (Hex):"
 msgstr "Benachrichtigungsfarbe (Hex):"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:51
+#: messagingmenu@lauinger-clan.de/prefs.js:53
 msgid "Email Notification:"
 msgstr "Epost-Benachrichtigung:"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:73
+#: messagingmenu@lauinger-clan.de/prefs.js:75
 msgid "Chat Notification:"
 msgstr "Chat-Benachrichtigung:"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:95
+#: messagingmenu@lauinger-clan.de/prefs.js:97
 msgid "Micro Blogging Notification:"
 msgstr "Mikroblog-Benachrichtigung:"
 

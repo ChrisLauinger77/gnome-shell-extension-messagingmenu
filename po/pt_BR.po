@@ -7,7 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2022-11-11 14:49+0100\n"
+=======
+"POT-Creation-Date: 2022-11-14 22:57+0100\n"
+>>>>>>> e868b24... Color chooser
 "PO-Revision-Date: 2022-11-11 15:31+0100\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -30,6 +34,7 @@ msgstr "Contatos"
 msgid "Settings"
 msgstr "Definicoes"
 
+<<<<<<< HEAD
 #: messagingmenu@lauinger-clan.de/prefs.js:18
 msgid "Notification Color (Hex):"
 msgstr ""
@@ -46,3 +51,24 @@ msgstr ""
 msgid "Micro Blogging Notification:"
 msgstr ""
 
+=======
+#: messagingmenu@lauinger-clan.de/prefs.js:8
+msgid "Notification Color (RGB):"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.js:20
+msgid "Notification Color (Hex):"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.js:53
+msgid "Email Notification:"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.js:75
+msgid "Chat Notification:"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.js:97
+msgid "Micro Blogging Notification:"
+msgstr ""
+>>>>>>> e868b24... Color chooser
