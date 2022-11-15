@@ -22,22 +22,23 @@ Originally forked from https://github.com/screenfreeze/messagingmenu
 ## Installation
 
 ### The easy way (recommended):
+
 One-click install from [extensions.gnome.org](https://extensions.gnome.org/extension/2896/messaging-menu/)!
 
 ### Download latest release
+
 1. Download the zip file from the [release page](https://github.com/ChrisLauinger77/messagingmenu/releases/latest)
 2. The md5 and sig files can be used to verify the integrity of the zip file
-3. Open `gnome-tweak-tool`, go to "Shell Extensions", "Install Extension" and select the zip file.
+3. Unzip and run install.sh from the zip
 
 ### Compile from source
+
 Use the `master` branch.
 
 ```bash
 git clone https://github.com/ChrisLauinger77/messagingmenu.git
 cd messagingmenu.git
-make install # compile locales, schemas and install locally
-# enable messagingmenu if you haven't already:
-gnome-shell-extension-tool -e messagingmenu@lauinger-clan.de
+run install.sh
 ```
 
 Now restart gnome-shell.
@@ -51,12 +52,13 @@ indentation. Translation files go in [po](po) and are based on [a
 template](po/gnome-shell-extension.pot). There are several `make` targets to
 assist development:
 
-  * With no arguments `make` cleans then recompiles the schemas & locales
-  * `prod` does the above, then zips it, hashes it and signs it
-  * `install` does the above, then extracts the zip to the install location
-  * `uninstall` removes the above-installed files
+- With no arguments `make` cleans then recompiles the schemas & locales
+- `prod` does the above, then zips it, hashes it and signs it
+- `install` does the above, then extracts the zip to the install location
+- `uninstall` removes the above-installed files
 
 ## License
+
 Copyright (C) 2012 Andreas Wilhelm, see [LICENSE.txt](LICENSE.txt) for details
 
 This program is free software; you can redistribute it and/or modify
@@ -66,7 +68,7 @@ the Free Software Foundation; either version 2 of the License, or
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along
