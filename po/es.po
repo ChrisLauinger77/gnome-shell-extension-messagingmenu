@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-14 22:57+0100\n"
+"POT-Creation-Date: 2022-11-17 19:43+0100\n"
 "PO-Revision-Date: 2022-11-14 22:58+0100\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Spanish\n"
@@ -18,15 +18,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2\n"
 
-#: messagingmenu@lauinger-clan.de/extension.js:147
+#: messagingmenu@lauinger-clan.de/extension.js:80
 msgid "Compose New Message"
 msgstr "Crear un Nuevo Mensaje"
 
-#: messagingmenu@lauinger-clan.de/extension.js:148
+#: messagingmenu@lauinger-clan.de/extension.js:81
 msgid "Contacts"
 msgstr "Contactos"
 
-#: messagingmenu@lauinger-clan.de/extension.js:298
+#: messagingmenu@lauinger-clan.de/extension.js:231
+#: messagingmenu@lauinger-clan.de/prefs.ui:5
+#: messagingmenu@lauinger-clan.de/prefs.ui:9
 msgid "Settings"
 msgstr "Ajustes"
 
@@ -39,14 +41,56 @@ msgid "Notification Color (Hex):"
 msgstr "Color de la Notificación (Hex):"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:53
+#: messagingmenu@lauinger-clan.de/prefs.ui:12
 msgid "Email Notification:"
 msgstr "Correo de Notificación:"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:75
+#: messagingmenu@lauinger-clan.de/prefs.ui:23
 msgid "Chat Notification:"
 msgstr "Notificación Chat:"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:97
+#: messagingmenu@lauinger-clan.de/prefs.ui:34
 msgid "Micro Blogging Notification:"
 msgstr "Notificación Microblog:"
 
+#: messagingmenu@lauinger-clan.de/prefs.ui:45
+#, fuzzy
+msgid "Notification Color (RGB)"
+msgstr "Color de la Notificación (RGB):"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:59
+#: messagingmenu@lauinger-clan.de/prefs.ui:63
+msgid "Email"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:69
+#: messagingmenu@lauinger-clan.de/prefs.ui:73
+msgid "Chat"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:79
+#: messagingmenu@lauinger-clan.de/prefs.ui:83
+#, fuzzy
+msgid "Micro blogging"
+msgstr "Notificación Microblog:"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:89
+#, fuzzy
+msgid "Notifier"
+msgstr "Correo de Notificación:"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:93
+#, fuzzy
+msgid "Email notifier"
+msgstr "Correo de Notificación:"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:98
+#, fuzzy
+msgid "Micro blogging notifier"
+msgstr "Notificación Microblog:"
+
+#, fuzzy
+#~ msgid "Micro blog"
+#~ msgstr "Notificación Microblog:"

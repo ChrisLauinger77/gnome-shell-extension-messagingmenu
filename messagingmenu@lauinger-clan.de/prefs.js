@@ -1,5 +1,5 @@
 const ExtensionUtils = imports.misc.extensionUtils;
-const { Gtk, Gdk, GObject, Gio } = imports.gi;
+const { Gtk, Gdk, GObject, Gio, Adw } = imports.gi;
 const Me = ExtensionUtils.getCurrentExtension();
 const Gettext = imports.gettext.domain("messagingmenu");
 const _ = Gettext.gettext;
@@ -132,13 +132,7 @@ function buildPrefsWidget() {
   return frame;
 }
 
-// used starting with GNOME 42
-function fillPreferencesWindow(window) {
-  let builder = Gtk.Builder.new();
-  builder.add_from_file(Me.path + "/prefs.ui");
-  let page = builder.get_object("messagingmenu_page");
-  window.add(page);
-
+function _page1(builder) {
   let email_setting_switch = builder.get_object("email_setting_switch");
   settings.bind(
     "notify-email",
@@ -170,6 +164,53 @@ function fillPreferencesWindow(window) {
       color_setting_button.get_rgba().to_string()
     );
   });
+}
+
+function _fillgroup(group, applist) {
+  for (let app of applist) {
+    let adwrow = new Adw.ActionRow({ title: app });
+    group.add(adwrow);
+  }
+}
+
+function _pages(builder) {
+  let apps = settings.get_string("compatible-emails").split(";");
+  let group = builder.get_object("messagingmenu_group_email");
+  _fillgroup(group, apps);
+
+  apps = settings.get_string("compatible-chats").split(";");
+  group = builder.get_object("messagingmenu_group_chat");
+  _fillgroup(group, apps);
+
+  apps = settings.get_string("compatible-mblogs").split(";");
+  group = builder.get_object("messagingmenu_group_mblog");
+  _fillgroup(group, apps);
+
+  apps = settings.get_string("compatible-hidden-email-notifiers").split(";");
+  group = builder.get_object("messagingmenu_group_emailnotifiers");
+  _fillgroup(group, apps);
+
+  apps = settings.get_string("compatible-hidden-mblog-notifiers").split(";");
+  group = builder.get_object("messagingmenu_group_mblognotifiers");
+  _fillgroup(group, apps);
+}
+
+// used starting with GNOME 42
+function fillPreferencesWindow(window) {
+  let builder = Gtk.Builder.new();
+  builder.add_from_file(Me.path + "/prefs.ui");
+  let page1 = builder.get_object("messagingmenu_page_settings");
+  window.add(page1);
+  let page2 = builder.get_object("messagingmenu_page_email");
+  window.add(page2);
+  let page3 = builder.get_object("messagingmenu_page_chat");
+  window.add(page3);
+  let page4 = builder.get_object("messagingmenu_page_mblog");
+  window.add(page4);
+  let page5 = builder.get_object("messagingmenu_page_notifiers");
+  window.add(page5);
+  _page1(builder);
+  _pages(builder);
 }
 
 function init() {

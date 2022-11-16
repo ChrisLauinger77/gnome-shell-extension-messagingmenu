@@ -8,13 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2022-11-11 14:49+0100\n"
-"PO-Revision-Date: 2022-11-11 15:29+0100\n"
-=======
-"POT-Creation-Date: 2022-11-14 22:57+0100\n"
+"POT-Creation-Date: 2022-11-17 19:43+0100\n"
 "PO-Revision-Date: 2022-11-14 23:00+0100\n"
->>>>>>> e868b24... Color chooser
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -24,33 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2\n"
 
-#: messagingmenu@lauinger-clan.de/extension.js:147
+#: messagingmenu@lauinger-clan.de/extension.js:80
 msgid "Compose New Message"
 msgstr "Создать Новое Сообщение"
 
-#: messagingmenu@lauinger-clan.de/extension.js:148
+#: messagingmenu@lauinger-clan.de/extension.js:81
 msgid "Contacts"
 msgstr "Контакты"
 
-#: messagingmenu@lauinger-clan.de/extension.js:298
+#: messagingmenu@lauinger-clan.de/extension.js:231
+#: messagingmenu@lauinger-clan.de/prefs.ui:5
+#: messagingmenu@lauinger-clan.de/prefs.ui:9
 msgid "Settings"
 msgstr "Настройки"
 
-<<<<<<< HEAD
-#: messagingmenu@lauinger-clan.de/prefs.js:18
-msgid "Notification Color (Hex):"
-msgstr "Цвет Уведомления (Гекс):"
-
-#: messagingmenu@lauinger-clan.de/prefs.js:51
-msgid "Email Notification:"
-msgstr "Уведомление по Электронной Почте:"
-
-#: messagingmenu@lauinger-clan.de/prefs.js:73
-msgid "Chat Notification:"
-msgstr "Уведомление о Чате:"
-
-#: messagingmenu@lauinger-clan.de/prefs.js:95
-=======
 #: messagingmenu@lauinger-clan.de/prefs.js:8
 msgid "Notification Color (RGB):"
 msgstr "Цвет Уведомления (RGB):"
@@ -60,15 +42,56 @@ msgid "Notification Color (Hex):"
 msgstr "Цвет Уведомления (Гекс):"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:53
+#: messagingmenu@lauinger-clan.de/prefs.ui:12
 msgid "Email Notification:"
 msgstr "Уведомление по Электронной Почте:"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:75
+#: messagingmenu@lauinger-clan.de/prefs.ui:23
 msgid "Chat Notification:"
 msgstr "Уведомление о Чате:"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:97
->>>>>>> e868b24... Color chooser
+#: messagingmenu@lauinger-clan.de/prefs.ui:34
 msgid "Micro Blogging Notification:"
 msgstr "Уведомление из Микроблоггинга:"
 
+#: messagingmenu@lauinger-clan.de/prefs.ui:45
+#, fuzzy
+msgid "Notification Color (RGB)"
+msgstr "Цвет Уведомления (RGB):"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:59
+#: messagingmenu@lauinger-clan.de/prefs.ui:63
+msgid "Email"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:69
+#: messagingmenu@lauinger-clan.de/prefs.ui:73
+msgid "Chat"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:79
+#: messagingmenu@lauinger-clan.de/prefs.ui:83
+#, fuzzy
+msgid "Micro blogging"
+msgstr "Уведомление из Микроблоггинга:"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:89
+#, fuzzy
+msgid "Notifier"
+msgstr "Уведомление по Электронной Почте:"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:93
+#, fuzzy
+msgid "Email notifier"
+msgstr "Уведомление по Электронной Почте:"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:98
+#, fuzzy
+msgid "Micro blogging notifier"
+msgstr "Уведомление из Микроблоггинга:"
+
+#, fuzzy
+#~ msgid "Micro blog"
+#~ msgstr "Уведомление из Микроблоггинга:"

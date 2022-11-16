@@ -31,82 +31,12 @@ let statusArea;
 let iconBox;
 let _queuechanged_handler;
 
-let compatible_Chats = [
-  "amsn",
-  "caprine",
-  "im.dino.Dino",
-  "emesene",
-  "empathy",
-  "fedora-empathy",
-  "gajim",
-  "hexchat",
-  "io.github.qtox.qTox.desktop",
-  "kadu",
-  "kde4-kmess",
-  "kde4-konversation",
-  "kde4-kopete",
-  "openfetion",
-  "org.gnome.Fractal",
-  "org.gnome.Polari",
-  "pidgin",
-  "qtox",
-  "qutim",
-  "signal-desktop",
-  "skype",
-  "skypeforlinux",
-  "slack",
-  "telegramdesktop",
-  "utox",
-  "venom",
-  "viber",
-  "xchat",
-  "discord",
-];
-
-let compatible_MBlogs = [
-  "birdie",
-  "corebird",
-  "fedora-gwibber",
-  "friends-app",
-  "gfeedline",
-  "gtwitter",
-  "gwibber",
-  "heybuddy",
-  "hotot",
-  "mitter",
-  "org.baedert.corebird",
-  "pino",
-  "polly",
-  "qwit",
-  "turpial",
-  "twitux",
-  "uk.co.ibboard.cawbird",
-  "com.github.bleakgrey.tootle",
-];
-
-let compatible_Emails = [
-  "claws-mail",
-  "evolution",
-  "geary",
-  "gnome-gmail",
-  "icedove",
-  "kde4-KMail2",
-  "mozilla-thunderbird",
-  "org.gnome.Evolution",
-  "org.gnome.Geary",
-  "postler",
-  "thunderbird",
-];
-
+let compatible_Chats;
+let compatible_MBlogs;
+let compatible_Emails;
 // Must be their Notificationtitle, because lookup_app doesnt work here
-let compatible_hidden_Email_Notifiers = [
-  "gmail-notify",
-  "mail-notification",
-  "Mailnag",
-  "Thunderbird",
-];
-
-let compatible_hidden_MBlog_Notifiers = ["friends", "GFeedLine", "gwibber"];
+let compatible_hidden_Email_Notifiers;
+let compatible_hidden_MBlog_Notifiers;
 
 const MessageMenuItem = GObject.registerClass(
   class MessageMenu_MessageMenuItem extends PopupMenu.PopupBaseMenuItem {
@@ -537,6 +467,17 @@ function enable() {
   this.settings = ExtensionUtils.getSettings(
     "org.gnome.shell.extensions.messagingmenu"
   );
+
+  compatible_Chats = settings.get_string("compatible-chats").split(";");
+  compatible_MBlogs = settings.get_string("compatible-mblogs").split(";");
+  compatible_Emails = settings.get_string("compatible-emails").split(";");
+  compatible_hidden_Email_Notifiers = settings
+    .get_string("compatible-hidden-email-notifiers")
+    .split(";");
+  compatible_hidden_MBlog_Notifiers = settings
+    .get_string("compatible-hidden-mblog-notifierschat")
+    .split(";");
+
   _indicator = new MessageMenu();
 
   _queuechanged_handler = Main.messageTray.connect(

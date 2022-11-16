@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface domain="messagingmenu">
-  <object class="AdwPreferencesPage" id="messagingmenu_page">
-    <property name="name">messagingmenu_page</property>
+  <object class="AdwPreferencesPage" id="messagingmenu_page_settings">
+    <property name="name">messagingmenu_page_settings</property>
     <property name="title" translatable="yes">Settings</property>
     <property name="icon-name">folder-symbolic</property>
     <child>
-      <object class="AdwPreferencesGroup" id="messagingmenu_group">
+      <object class="AdwPreferencesGroup" id="messagingmenu_group_settings">
         <property name="title" translatable="yes">Settings</property>
         <child>
           <object class="AdwActionRow" id="messagingmenu_row1">
@@ -17,8 +17,8 @@
               </object>
             </child>
           </object>
-          </child>
-          <child>
+        </child>
+        <child>
           <object class="AdwActionRow" id="messagingmenu_row2">
             <property name="title" translatable="yes">Chat Notification:</property>
             <property name="activatable-widget">chat_setting_switch</property>
@@ -28,8 +28,8 @@
               </object>
             </child>
           </object>
-          </child>
-          <child>
+        </child>
+        <child>
           <object class="AdwActionRow" id="messagingmenu_row3">
             <property name="title" translatable="yes">Micro Blogging Notification:</property>
             <property name="activatable-widget">mblogging_setting_switch</property>
@@ -39,8 +39,8 @@
               </object>
             </child>
           </object>
-          </child>
-          <child>
+        </child>
+        <child>
           <object class="AdwActionRow" id="messagingmenu_row4">
             <property name="title" translatable="yes">Notification Color (RGB)</property>
             <property name="activatable-widget">color_setting_button</property>
@@ -53,5 +53,50 @@
         </child>
       </object>
     </child>
+  </object>
+  <object class="AdwPreferencesPage" id="messagingmenu_page_email">
+      <property name="name">messagingmenu_page_email</property>
+      <property name="title" translatable="yes">Email</property>
+      <property name="icon-name">mail-message-new-symbolic</property>
+      <child>
+        <object class="AdwPreferencesGroup" id="messagingmenu_group_email">
+          <property name="title" translatable="yes">Email</property>
+        </object>
+      </child>
+  </object>
+  <object class="AdwPreferencesPage" id="messagingmenu_page_chat">
+      <property name="name">messagingmenu_page_chat</property>
+      <property name="title" translatable="yes">Chat</property>
+      <property name="icon-name">chat-message-new-symbolic</property>
+      <child>
+        <object class="AdwPreferencesGroup" id="messagingmenu_group_chat">
+          <property name="title" translatable="yes">Chat</property>
+        </object>
+      </child>
+  </object>
+  <object class="AdwPreferencesPage" id="messagingmenu_page_mblog">
+      <property name="name">messagingmenu_page_mblog</property>
+      <property name="title" translatable="yes">Micro blogging</property>
+      <property name="icon-name">face-wink-symbolic</property>
+      <child>
+        <object class="AdwPreferencesGroup" id="messagingmenu_group_mblog">
+          <property name="title" translatable="yes">Micro blogging</property>
+        </object>
+      </child>
+  </object>
+  <object class="AdwPreferencesPage" id="messagingmenu_page_notifiers">
+      <property name="name">messagingmenu_page_notifiers</property>
+      <property name="title" translatable="yes">Notifier</property>
+      <property name="icon-name">preferences-system-notifications-symbolic</property>
+      <child>
+        <object class="AdwPreferencesGroup" id="messagingmenu_group_emailnotifiers">
+          <property name="title" translatable="yes">Email notifier</property>
+        </object>
+      </child>
+      <child>
+        <object class="AdwPreferencesGroup" id="messagingmenu_group_mblognotifiers">
+          <property name="title" translatable="yes">Micro blogging notifier</property>
+        </object>
+      </child>
   </object>
 </interface>

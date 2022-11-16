@@ -31,5 +31,30 @@
       <summary>Notification Color RGBA</summary>
       <description>The color used to paint the Icon(new version since GNOME 42)</description>
     </key>
+    <key name="compatible-chats" type="s">
+      <default>'amsn;caprine;im.dino.Dino;emesene;empathy;fedora-empathy;gajim;hexchat;io.github.qtox.qTox.desktop;kadu;kde4-kmess;kde4-konversation;kde4-kopete;openfetion;org.gnome.Fractal;org.gnome.Polari;pidgin;qtox;qutim;signal-desktop;skype;skypeforlinux;slack;telegramdesktop;utox;venom;viber;xchat;discord'</default>
+      <summary>Compatible Chats</summary>
+      <description>case sensitive name of the .desktop file names to start the app (with .desktop ending) delimited by semicolon</description>
+    </key>
+    <key name="compatible-mblogs" type="s">
+      <default>'birdie;corebird;fedora-gwibber;friends-app;gfeedline;gtwitter;gwibber;heybuddy;hotot;mitter;org.baedert.corebird;pino;polly;qwit;turpial;twitux;uk.co.ibboard.cawbird;com.github.bleakgrey.tootle'</default>
+      <summary>Compatible MBlogs</summary>
+      <description>case sensitive name of the .desktop file names to start the app (with .desktop ending) delimited by semicolon</description>
+    </key>
+    <key name="compatible-emails" type="s">
+      <default>'claws-mail;evolution;geary;gnome-gmail;icedove;kde4-KMail2;mozilla-thunderbird;org.gnome.Evolution;org.gnome.Geary;postler;thunderbird'</default>
+      <summary>Compatible Emails</summary>
+      <description>case sensitive name of the .desktop file names to start the app (with .desktop ending) delimited by semicolon</description>
+    </key>
+    <key name="compatible-hidden-email-notifiers" type="s">
+      <default>'gmail-notify;mail-notification;Mailnag;Thunderbird'</default>
+      <summary>Compatible hidden Email Notifiers</summary>
+      <description>Must be their Notificationtitle, because lookup_app doesnt work here</description>
+    </key>
+        <key name="compatible-hidden-mblog-notifiers" type="s">
+      <default>'friends;GFeedLine;gwibber'</default>
+      <summary>Compatible hidden MBlog Notifiers</summary>
+      <description>Must be their Notificationtitle, because lookup_app doesnt work here</description>
+    </key>
   </schema>
 </schemalist>

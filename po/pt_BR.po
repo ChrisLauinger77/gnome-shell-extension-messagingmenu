@@ -7,11 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2022-11-11 14:49+0100\n"
-=======
-"POT-Creation-Date: 2022-11-14 22:57+0100\n"
->>>>>>> e868b24... Color chooser
+"POT-Creation-Date: 2022-11-17 19:43+0100\n"
 "PO-Revision-Date: 2022-11-11 15:31+0100\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -22,36 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2\n"
 
-#: messagingmenu@lauinger-clan.de/extension.js:147
+#: messagingmenu@lauinger-clan.de/extension.js:80
 msgid "Compose New Message"
 msgstr "Escrever Nova Mensagem"
 
-#: messagingmenu@lauinger-clan.de/extension.js:148
+#: messagingmenu@lauinger-clan.de/extension.js:81
 msgid "Contacts"
 msgstr "Contatos"
 
-#: messagingmenu@lauinger-clan.de/extension.js:298
+#: messagingmenu@lauinger-clan.de/extension.js:231
+#: messagingmenu@lauinger-clan.de/prefs.ui:5
+#: messagingmenu@lauinger-clan.de/prefs.ui:9
 msgid "Settings"
 msgstr "Definicoes"
 
-<<<<<<< HEAD
-#: messagingmenu@lauinger-clan.de/prefs.js:18
-msgid "Notification Color (Hex):"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:51
-msgid "Email Notification:"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:73
-msgid "Chat Notification:"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:95
-msgid "Micro Blogging Notification:"
-msgstr ""
-
-=======
 #: messagingmenu@lauinger-clan.de/prefs.js:8
 msgid "Notification Color (RGB):"
 msgstr ""
@@ -61,14 +41,47 @@ msgid "Notification Color (Hex):"
 msgstr ""
 
 #: messagingmenu@lauinger-clan.de/prefs.js:53
+#: messagingmenu@lauinger-clan.de/prefs.ui:12
 msgid "Email Notification:"
 msgstr ""
 
 #: messagingmenu@lauinger-clan.de/prefs.js:75
+#: messagingmenu@lauinger-clan.de/prefs.ui:23
 msgid "Chat Notification:"
 msgstr ""
 
 #: messagingmenu@lauinger-clan.de/prefs.js:97
+#: messagingmenu@lauinger-clan.de/prefs.ui:34
 msgid "Micro Blogging Notification:"
 msgstr ""
->>>>>>> e868b24... Color chooser
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:45
+msgid "Notification Color (RGB)"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:59
+#: messagingmenu@lauinger-clan.de/prefs.ui:63
+msgid "Email"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:69
+#: messagingmenu@lauinger-clan.de/prefs.ui:73
+msgid "Chat"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:79
+#: messagingmenu@lauinger-clan.de/prefs.ui:83
+msgid "Micro blogging"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:89
+msgid "Notifier"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:93
+msgid "Email notifier"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:98
+msgid "Micro blogging notifier"
+msgstr ""
