@@ -468,15 +468,23 @@ function enable() {
     "org.gnome.shell.extensions.messagingmenu"
   );
 
-  compatible_Chats = settings.get_string("compatible-chats").split(";");
-  compatible_MBlogs = settings.get_string("compatible-mblogs").split(";");
-  compatible_Emails = settings.get_string("compatible-emails").split(";");
+  compatible_Chats = settings.get_string("compatible-chats").split(";").sort();
+  compatible_MBlogs = settings
+    .get_string("compatible-mblogs")
+    .split(";")
+    .sort();
+  compatible_Emails = settings
+    .get_string("compatible-emails")
+    .split(";")
+    .sort();
   compatible_hidden_Email_Notifiers = settings
     .get_string("compatible-hidden-email-notifiers")
-    .split(";");
+    .split(";")
+    .sort();
   compatible_hidden_MBlog_Notifiers = settings
-    .get_string("compatible-hidden-mblog-notifierschat")
-    .split(";");
+    .get_string("compatible-hidden-mblog-notifiers")
+    .split(";")
+    .sort();
 
   _indicator = new MessageMenu();
 

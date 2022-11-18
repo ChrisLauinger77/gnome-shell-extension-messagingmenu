@@ -28,7 +28,7 @@
     </key>
     <key name="color-rgba" type="s">
       <default>'rgba(255,0,0,1)'</default>
-      <summary>Notification Color RGBA</summary>
+      <summary>Notification Color RGB</summary>
       <description>The color used to paint the Icon(new version since GNOME 42)</description>
     </key>
     <key name="compatible-chats" type="s">

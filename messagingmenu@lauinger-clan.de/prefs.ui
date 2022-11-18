@@ -53,6 +53,54 @@
         </child>
       </object>
     </child>
+    <child>
+      <object class="AdwPreferencesGroup" id="messagingmenu_group_add">
+        <property name="title" translatable="yes">Add menu</property>
+        <property name="description" translatable="yes">Name of .desktop files without .desktop ending</property>
+        <child>
+          <object class="AdwActionRow" id="messagingmenu_row_add1">
+            <property name="title" translatable="yes">Type:</property>
+            <property name="activatable-widget">messagingmenu_cmb_add</property>
+            <child>
+              <object class="GtkComboBoxText" id="messagingmenu_cmb_add">
+                <property name="valign">center</property>
+                <property name="active-id">email</property>
+                  <items>
+                    <item translatable="yes" id="email">Email</item>
+                    <item translatable="yes" id="chat">Chat</item>
+                    <item translatable="yes" id="microblogging">Micro blogging</item>
+                    <item translatable="yes" id="emailnotifier">Email notifier</item>
+                    <item translatable="yes" id="microbloggingnotifier">Micro blogging notifier</item>
+                </items>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwActionRow" id="messagingmenu_row_add2">
+            <property name="title" translatable="yes">Name:</property>
+            <property name="activatable-widget">entry_add_menu_name</property>
+            <child>
+              <object class="GtkEntry" id="entry_add_menu_name">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwActionRow" id="messagingmenu_row_add3">
+            <property name="title" translatable="yes"></property>
+            <property name="activatable-widget">button_add_menu_add</property>
+            <child>
+              <object class="GtkButton" id="button_add_menu_add">
+                <property name="label" translatable="yes">Add</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
   </object>
   <object class="AdwPreferencesPage" id="messagingmenu_page_email">
       <property name="name">messagingmenu_page_email</property>
@@ -61,6 +109,7 @@
       <child>
         <object class="AdwPreferencesGroup" id="messagingmenu_group_email">
           <property name="title" translatable="yes">Email</property>
+          <property name="description" translatable="yes">Name of .desktop files without .desktop ending</property>
         </object>
       </child>
   </object>
@@ -71,6 +120,7 @@
       <child>
         <object class="AdwPreferencesGroup" id="messagingmenu_group_chat">
           <property name="title" translatable="yes">Chat</property>
+          <property name="description" translatable="yes">Name of .desktop files without .desktop ending</property>
         </object>
       </child>
   </object>
@@ -81,6 +131,7 @@
       <child>
         <object class="AdwPreferencesGroup" id="messagingmenu_group_mblog">
           <property name="title" translatable="yes">Micro blogging</property>
+          <property name="description" translatable="yes">Name of .desktop files without .desktop ending</property>
         </object>
       </child>
   </object>
@@ -91,11 +142,13 @@
       <child>
         <object class="AdwPreferencesGroup" id="messagingmenu_group_emailnotifiers">
           <property name="title" translatable="yes">Email notifier</property>
+          <property name="description" translatable="yes">Notifier title</property>
         </object>
       </child>
       <child>
         <object class="AdwPreferencesGroup" id="messagingmenu_group_mblognotifiers">
           <property name="title" translatable="yes">Micro blogging notifier</property>
+          <property name="description" translatable="yes">Notifier title</property>
         </object>
       </child>
   </object>
