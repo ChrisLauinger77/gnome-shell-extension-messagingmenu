@@ -1,5 +1,11 @@
 const ExtensionUtils = imports.misc.extensionUtils;
-const { Gtk, Gdk, GObject, Gio, Adw } = imports.gi;
+const { Gtk, Gdk, GObject, Gio } = imports.gi;
+try {
+  const { Adw } = imports.gi;
+} catch (err) {
+  logError(err, "messagingmenu");
+}
+
 const Me = ExtensionUtils.getCurrentExtension();
 const Gettext = imports.gettext.domain("messagingmenu");
 const _ = Gettext.gettext;
