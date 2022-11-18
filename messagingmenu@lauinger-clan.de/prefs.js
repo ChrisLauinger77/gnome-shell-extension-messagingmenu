@@ -1,11 +1,5 @@
 const ExtensionUtils = imports.misc.extensionUtils;
 const { Gtk, Gdk, GObject, Gio } = imports.gi;
-try {
-  const { Adw } = imports.gi;
-} catch (err) {
-  logError(err, "messagingmenu");
-}
-
 const Me = ExtensionUtils.getCurrentExtension();
 const Gettext = imports.gettext.domain("messagingmenu");
 const _ = Gettext.gettext;
@@ -184,6 +178,7 @@ function _addMenu(cmb_add, entry_add) {
   if (!valuesettings.toLowerCase().includes(entry_add.text.toLowerCase())) {
     settings.set_string(strsettings, valuesettings + ";" + entry_add.text);
     let group = builder.get_object(strgroup);
+    const { Adw } = imports.gi;
     let adwrow = new Adw.ActionRow({ title: entry_add.text });
     group.add(adwrow);
   }
@@ -279,6 +274,7 @@ function _page1() {
 }
 
 function _fillgroup(group, applist) {
+  const { Adw } = imports.gi;
   for (let app of applist) {
     let adwrow = new Adw.ActionRow({ title: app });
     group.add(adwrow);
