@@ -49,13 +49,7 @@ You can get the source code following the [above steps](#compile-from-source).
 Unless you're developing for an older gnome-shell version, use the master
 branch. If you're using vim, please use `:set noexpandtab` to keep the tabs
 indentation. Translation files go in [po](po) and are based on [a
-template](po/gnome-shell-extension.pot). There are several `make` targets to
-assist development:
-
-- With no arguments `make` cleans then recompiles the schemas & locales
-- `prod` does the above, then zips it, hashes it and signs it
-- `install` does the above, then extracts the zip to the install location
-- `uninstall` removes the above-installed files
+template](po/gnome-shell-extension.pot).
 
 ## License
 

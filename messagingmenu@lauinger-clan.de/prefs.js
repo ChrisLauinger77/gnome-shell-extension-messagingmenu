@@ -8,6 +8,7 @@ const g_schema = "org.gnome.shell.extensions.messagingmenu";
 function init() {
   ExtensionUtils.initTranslations("messagingmenu");
 }
+
 class Prefs {
   constructor(schema) {
     this._settings = ExtensionUtils.getSettings(schema);
@@ -143,7 +144,6 @@ function buildPrefsWidget() {
   return prefs._buildPrefsWidget();
 }
 
-// used until GNOME 42 (41 and before)
 class AdwPrefs {
   constructor(schema, window) {
     this._settings = ExtensionUtils.getSettings(schema);
@@ -354,6 +354,7 @@ class AdwPrefs {
   }
 }
 
+// used until GNOME 42 (41 and before)
 function fillPreferencesWindow(window) {
   let adwprefs = new AdwPrefs(g_schema, window);
 

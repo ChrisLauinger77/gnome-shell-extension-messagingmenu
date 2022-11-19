@@ -11,5 +11,6 @@ for pofile in *.po
 		echo "Updateing: $pofile"
 		msgmerge -U "$pofile" "$reffile"
 	done
-echo "Done."
 
+rm *.po~
+echo "Done."
