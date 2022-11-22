@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-18 14:45+0100\n"
-"PO-Revision-Date: 2022-11-18 14:45+0100\n"
+"PO-Revision-Date: 2022-11-22 20:38+0100\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -131,7 +131,7 @@ msgstr "Hinzufügen"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:140
 msgid "Notifier"
-msgstr "Benachrichtigungstitel"
+msgstr "Benachrichtigung"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:6
 msgid "Alert on new Email"
