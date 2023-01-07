@@ -23,7 +23,7 @@ const _rgbToHex = (r, g, b) =>
   "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("");
 
 let _indicator;
-let originalUpdateCount;
+let settings;
 let originalStyle;
 let iconChanged = false;
 let availableNotifiers = new Array();
@@ -464,7 +464,7 @@ function init() {
 }
 
 function enable() {
-  this.settings = ExtensionUtils.getSettings(
+  settings = ExtensionUtils.getSettings(
     "org.gnome.shell.extensions.messagingmenu"
   );
 
@@ -506,5 +506,5 @@ function disable() {
   Main.messageTray.disconnect(_queuechanged_handler);
   _indicator.destroy();
   _indicator = null;
-  this.settings = null;
+  settings = null;
 }

@@ -3,7 +3,7 @@
   <object class="AdwPreferencesPage" id="messagingmenu_page_settings">
     <property name="name">messagingmenu_page_settings</property>
     <property name="title" translatable="yes">Settings</property>
-    <property name="icon-name">folder-symbolic</property>
+    <property name="icon-name">preferences-system-symbolic</property>
     <child>
       <object class="AdwPreferencesGroup" id="messagingmenu_group_settings">
         <property name="title" translatable="yes">Settings</property>
