@@ -31,14 +31,14 @@ One-click install from [extensions.gnome.org](https://extensions.gnome.org/exten
 2. The md5 and sig files can be used to verify the integrity of the zip file
 3. Unzip and run install.sh from the zip
 
-### Compile from source
+### Install from source
 
 Use the `master` branch.
 
 ```bash
 git clone https://github.com/ChrisLauinger77/messagingmenu.git
 cd messagingmenu.git
-run install.sh
+./install.sh
 ```
 
 Now restart gnome-shell.
