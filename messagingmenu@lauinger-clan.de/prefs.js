@@ -204,6 +204,7 @@ class AdwPrefs {
             const { Adw } = imports.gi;
             let adwrow = new Adw.ActionRow({ title: entry_add.text });
             group.add(adwrow);
+            entry_add.text = "";
         }
     }
 
