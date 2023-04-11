@@ -27,7 +27,7 @@
       <description>The color used to paint the Icon(old version since GNOME 41)</description>
     </key>
     <key name="color-rgba" type="s">
-      <default>'rgba(255,0,0,1)'</default>
+      <default>'rgb(255,0,0)'</default>
       <summary>Notification Color RGB</summary>
       <description>The color used to paint the Icon(new version since GNOME 42)</description>
     </key>
