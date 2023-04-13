@@ -23,7 +23,7 @@ Originally forked from https://github.com/screenfreeze/messagingmenu
 
 ### The easy way (recommended):
 
-One-click install from [extensions.gnome.org](https://extensions.gnome.org/extension/2896/messaging-menu/)!
+[<img src="https://www.lauinger-clan.de/pics/get-it-on-ego.png" height="125">](https://extensions.gnome.org/extension/2896/messaging-menu)
 
 ### Download latest release
 
