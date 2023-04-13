@@ -246,6 +246,7 @@ class AdwPrefs {
         let email_setting_switch = this._builder.get_object(
             "email_setting_switch"
         );
+        email_setting_switch.set_tooltip_text(_("Toggle email notification"));
         this._settings.bind(
             "notify-email",
             email_setting_switch,
@@ -255,6 +256,7 @@ class AdwPrefs {
         let chat_setting_switch = this._builder.get_object(
             "chat_setting_switch"
         );
+        chat_setting_switch.set_tooltip_text(_("Toggle chat notification"));
         this._settings.bind(
             "notify-chat",
             chat_setting_switch,
@@ -263,6 +265,9 @@ class AdwPrefs {
         );
         let mblogging_setting_switch = this._builder.get_object(
             "mblogging_setting_switch"
+        );
+        mblogging_setting_switch.set_tooltip_text(
+            _("Toggle micro blogging notification")
         );
         this._settings.bind(
             "notify-mblogging",
@@ -273,6 +278,7 @@ class AdwPrefs {
         let color_setting_button = this._builder.get_object(
             "color_setting_button"
         );
+        color_setting_button.set_tooltip_text(_("Notification Color RGB"));
         let mycolor = new Gdk.RGBA();
         mycolor.parse(this._settings.get_string("color-rgba"));
         color_setting_button.set_rgba(mycolor);
@@ -295,6 +301,9 @@ class AdwPrefs {
         );
 
         let adwrow = this._builder.get_object("messagingmenu_row_add2");
+        adwrow.set_tooltip_text(
+            _("Usually located in '/usr/share/applications'")
+        );
         let buttonfilechooser = new Gtk.Button({
             label: _("..."),
             valign: Gtk.Align.CENTER,
