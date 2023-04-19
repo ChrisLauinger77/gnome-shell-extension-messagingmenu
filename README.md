@@ -45,11 +45,9 @@ Now restart gnome-shell.
 
 ## Developing
 
-You can get the source code following the [above steps](#compile-from-source).
-Unless you're developing for an older gnome-shell version, use the master
-branch. If you're using vim, please use `:set noexpandtab` to keep the tabs
-indentation. Translation files go in [po](po) and are based on [a
-template](po/gnome-shell-extension.pot).
+Pull requests are welcome.
+
+To update the translation files run ./update-translation-po-files.sh in the extensions directory after your code changes are finished. This will update the files in po folder. Then poedit (https://poedit.net/download) can be used to translate the strings. poedit can also be used to create new localization files.
 
 ## License
 
