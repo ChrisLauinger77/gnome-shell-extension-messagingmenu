@@ -337,29 +337,35 @@ class AdwPrefs {
         let apps = this._settings
             .get_string("compatible-emails")
             .split(";")
-            .sort();
+            .sort(Intl.Collator().compare);
         let group = this._builder.get_object("messagingmenu_group_email");
         this._fillgroup(group, apps);
 
-        apps = this._settings.get_string("compatible-chats").split(";").sort();
+        apps = this._settings
+            .get_string("compatible-chats")
+            .split(";")
+            .sort(Intl.Collator().compare);
         group = this._builder.get_object("messagingmenu_group_chat");
         this._fillgroup(group, apps);
 
-        apps = this._settings.get_string("compatible-mblogs").split(";").sort();
+        apps = this._settings
+            .get_string("compatible-mblogs")
+            .split(";")
+            .sort(Intl.Collator().compare);
         group = this._builder.get_object("messagingmenu_group_mblog");
         this._fillgroup(group, apps);
 
         apps = this._settings
             .get_string("compatible-hidden-email-notifiers")
             .split(";")
-            .sort();
+            .sort(Intl.Collator().compare);
         group = this._builder.get_object("messagingmenu_group_emailnotifiers");
         this._fillgroup(group, apps);
 
         apps = this._settings
             .get_string("compatible-hidden-mblog-notifiers")
             .split(";")
-            .sort();
+            .sort(Intl.Collator().compare);
         group = this._builder.get_object("messagingmenu_group_mblognotifiers");
         this._fillgroup(group, apps);
     }
