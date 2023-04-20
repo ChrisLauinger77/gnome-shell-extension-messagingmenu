@@ -46,10 +46,15 @@
       <summary>Compatible hidden Email Notifiers</summary>
       <description>Must be their Notificationtitle, because lookup_app doesnt work here</description>
     </key>
-        <key name="compatible-hidden-mblog-notifiers" type="s">
+    <key name="compatible-hidden-mblog-notifiers" type="s">
       <default>'friends;GFeedLine;gwibber'</default>
       <summary>Compatible hidden MBlog Notifiers</summary>
       <description>Must be their Notificationtitle, because lookup_app doesnt work here</description>
+    </key>
+    <key name="icon-size" type="i">
+      <default>22</default>
+      <summary>Icon size</summary>
+      <description>Size of the app icons in the menu</description>
     </key>
   </schema>
 </schemalist>

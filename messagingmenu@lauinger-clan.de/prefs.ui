@@ -51,6 +51,11 @@
             </child>
           </object>
         </child>
+        <child>
+          <object class="AdwActionRow" id="messagingmenu_row5">
+            <property name="title" translatable="yes">Icon size (pixel)</property>
+          </object>
+        </child>
       </object>
     </child>
     <child>

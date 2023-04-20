@@ -17,11 +17,10 @@ const Gettext = imports.gettext.domain("messagingmenu");
 const _ = Gettext.gettext;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
-const ICON_SIZE = 22;
-
 const _rgbToHex = (r, g, b) =>
     "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("");
 
+let ICON_SIZE = 22;
 let _indicator;
 let settings;
 let originalStyle;
@@ -517,7 +516,7 @@ function enable() {
         .get_string("compatible-hidden-mblog-notifiers")
         .split(";")
         .sort(Intl.Collator().compare);
-
+    ICON_SIZE = settings.get_int("icon-size");
     _indicator = new MessageMenu();
 
     _queuechanged_handler = Main.messageTray.connect(
@@ -539,4 +538,5 @@ function disable() {
     _indicator.destroy();
     _indicator = null;
     settings = null;
+    ICON_SIZE = null;
 }

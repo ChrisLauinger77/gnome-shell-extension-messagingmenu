@@ -242,6 +242,26 @@ class AdwPrefs {
         );
     }
 
+    _rangeslider(key, values, tooltip, settings) {
+        let [min, max, step, defv] = values;
+        let range = Gtk.Scale.new_with_range(
+            Gtk.Orientation.HORIZONTAL,
+            min,
+            max,
+            step
+        );
+        range.set_tooltip_text(tooltip);
+        range.set_value(settings.get_int(key));
+        range.set_draw_value(true);
+        range.add_mark(defv, Gtk.PositionType.BOTTOM, null);
+        range.set_size_request(200, -1);
+
+        range.connect("value-changed", function (slider) {
+            settings.set_int(key, slider.get_value());
+        });
+        return range;
+    }
+
     _page1() {
         let email_setting_switch = this._builder.get_object(
             "email_setting_switch"
@@ -286,6 +306,17 @@ class AdwPrefs {
             "color-set",
             this._onColorChanged.bind(this, color_setting_button)
         );
+        let row5 = this._builder.get_object("messagingmenu_row5");
+
+        let iconsize_slider = this._rangeslider(
+            "icon-size",
+            [12, 48, 1, 22],
+            _("Size of the app icons in the menu"),
+            this._settings
+        );
+        row5.add_suffix(iconsize_slider);
+        row5.activatable_widget = iconsize_slider;
+
         let group_add = this._builder.get_object("messagingmenu_group_add");
         let cmb_add = this._builder.get_object("messagingmenu_cmb_add");
         cmb_add.set_active(0);
