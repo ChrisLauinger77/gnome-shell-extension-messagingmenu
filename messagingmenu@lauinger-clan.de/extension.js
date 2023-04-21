@@ -17,29 +17,13 @@ const Gettext = imports.gettext.domain("messagingmenu");
 const _ = Gettext.gettext;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
+const g_schema = "org.gnome.shell.extensions.messagingmenu";
 const _rgbToHex = (r, g, b) =>
     "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("");
 
-let ICON_SIZE = 22;
-let _indicator;
-let settings;
-let originalStyle;
-let iconChanged = false;
-let availableNotifiers = new Array();
-let statusArea;
-let iconBox;
-let _queuechanged_handler;
-
-let compatible_Chats;
-let compatible_MBlogs;
-let compatible_Emails;
-// Must be their Notificationtitle, because lookup_app doesnt work here
-let compatible_hidden_Email_Notifiers;
-let compatible_hidden_MBlog_Notifiers;
-
 const MessageMenuItem = GObject.registerClass(
     class MessageMenu_MessageMenuItem extends PopupMenu.PopupBaseMenuItem {
-        _init(app) {
+        _init(app, intIcon_size) {
             super._init();
             this._app = app;
 
@@ -49,7 +33,7 @@ const MessageMenuItem = GObject.registerClass(
             });
             this.add_child(this.label);
 
-            this._icon = app.create_icon_texture(ICON_SIZE);
+            this._icon = app.create_icon_texture(intIcon_size);
             this.add_child(this._icon);
         }
 
@@ -62,8 +46,32 @@ const MessageMenuItem = GObject.registerClass(
 
 const MessageMenu = GObject.registerClass(
     class MessageMenu_MessageMenu extends PanelMenu.Button {
-        _init() {
+        _init(settings, intIcon_size) {
+            this._settings = settings;
+            this._intIcon_size = intIcon_size;
             super._init(0.0, "MessageMenu");
+
+            this._compatible_Chats = this._settings
+                .get_string("compatible-chats")
+                .split(";")
+                .sort();
+            this._compatible_MBlogs = this._settings
+                .get_string("compatible-mblogs")
+                .split(";")
+                .sort(Intl.Collator().compare);
+            this._compatible_Emails = this._settings
+                .get_string("compatible-emails")
+                .split(";")
+                .sort(Intl.Collator().compare);
+            this._compatible_hidden_Email_Notifiers = this._settings
+                .get_string("compatible-hidden-email-notifiers")
+                .split(";")
+                .sort(Intl.Collator().compare);
+            this._compatible_hidden_MBlog_Notifiers = this._settings
+                .get_string("compatible-hidden-mblog-notifiers")
+                .split(";")
+                .sort(Intl.Collator().compare);
+
             let hbox = new St.BoxLayout({
                 style_class: "panel-status-menu-box",
             });
@@ -84,6 +92,7 @@ const MessageMenu = GObject.registerClass(
             this._availableEmails = new Array();
             this._availableChats = new Array();
             this._availableMBlogs = new Array();
+            this._availableNotifiers = new Array();
 
             this._thunderbird = null;
             this._icedove = null;
@@ -117,8 +126,23 @@ const MessageMenu = GObject.registerClass(
             this._buildMenu();
         }
 
+        get AvailableNotifiers() {
+            return this._availableNotifiers;
+        }
+
+        get Compatible_hidden_Email_Notifiers() {
+            return this._compatible_hidden_Email_Notifiers;
+        }
+
+        get Compatible_hidden_MBlog_Notifiers() {
+            return this._compatible_hidden_MBlog_Notifiers;
+        }
+
         _buildMenuEVOLUTION() {
-            let newLauncher = new MessageMenuItem(this._evolution);
+            let newLauncher = new MessageMenuItem(
+                this._evolution,
+                this._intIcon_size
+            );
             this.menu.addMenuItem(newLauncher);
 
             this.comp = new PopupMenu.PopupMenuItem(
@@ -138,7 +162,10 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuTHUNDERBIRD() {
-            let newLauncher = new MessageMenuItem(this._thunderbird);
+            let newLauncher = new MessageMenuItem(
+                this._thunderbird,
+                this._intIcon_size
+            );
             this.menu.addMenuItem(newLauncher);
 
             this.comp_tb = new PopupMenu.PopupMenuItem(
@@ -159,7 +186,10 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuICEDOVE() {
-            let newLauncher = new MessageMenuItem(this._icedove);
+            let newLauncher = new MessageMenuItem(
+                this._icedove,
+                this._intIcon_size
+            );
             this.menu.addMenuItem(newLauncher);
 
             this.comp_icedove = new PopupMenu.PopupMenuItem(
@@ -187,7 +217,10 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuKMAIL() {
-            let newLauncher = new MessageMenuItem(this._kmail);
+            let newLauncher = new MessageMenuItem(
+                this._kmail,
+                this._intIcon_size
+            );
             this.menu.addMenuItem(newLauncher);
 
             this.comp = new PopupMenu.PopupMenuItem(
@@ -202,7 +235,10 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuCLAWS() {
-            let newLauncher = new MessageMenuItem(this._claws);
+            let newLauncher = new MessageMenuItem(
+                this._claws,
+                this._intIcon_size
+            );
             this.menu.addMenuItem(newLauncher);
 
             this.comp = new PopupMenu.PopupMenuItem(
@@ -217,7 +253,10 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuGEARY() {
-            let newLauncher = new MessageMenuItem(this._geary);
+            let newLauncher = new MessageMenuItem(
+                this._geary,
+                this._intIcon_size
+            );
             this.menu.addMenuItem(newLauncher);
 
             this.comp = new PopupMenu.PopupMenuItem(
@@ -233,21 +272,30 @@ const MessageMenu = GObject.registerClass(
 
         _buildMenu() {
             for (let e_app of this._availableEmails) {
-                let newLauncher = new MessageMenuItem(e_app);
+                let newLauncher = new MessageMenuItem(
+                    e_app,
+                    this._intIcon_size
+                );
                 this.menu.addMenuItem(newLauncher);
             }
             this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 
             // insert Chat Clients into menu
             for (let c_app of this._availableChats) {
-                let newLauncher = new MessageMenuItem(c_app);
+                let newLauncher = new MessageMenuItem(
+                    c_app,
+                    this._intIcon_size
+                );
                 this.menu.addMenuItem(newLauncher);
             }
             this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 
             // insert Blogging Clients into menu
             for (let mb_app of this._availableMBlogs) {
-                let newLauncher = new MessageMenuItem(mb_app);
+                let newLauncher = new MessageMenuItem(
+                    mb_app,
+                    this._intIcon_size
+                );
                 this.menu.addMenuItem(newLauncher);
             }
 
@@ -263,7 +311,7 @@ const MessageMenu = GObject.registerClass(
 
         _getAppsEMAIL(appsys) {
             //get available Email Apps
-            for (let app_name of compatible_Emails) {
+            for (let app_name of this._compatible_Emails) {
                 let app = appsys.lookup_app(app_name + ".desktop");
                 if (app != null) {
                     // filter Apps with special Menus
@@ -282,8 +330,8 @@ const MessageMenu = GObject.registerClass(
                     } else {
                         this._availableEmails.push(app);
                     }
-                    if (settings.get_boolean("notify-email")) {
-                        availableNotifiers.push(app);
+                    if (this._settings.get_boolean("notify-email")) {
+                        this._availableNotifiers.push(app);
                     }
                 }
             }
@@ -291,14 +339,14 @@ const MessageMenu = GObject.registerClass(
 
         _getAppsCHAT(appsys) {
             //get available Chat Apps
-            for (let c_app of compatible_Chats) {
+            for (let c_app of this._compatible_Chats) {
                 let app_name = c_app;
                 let app = appsys.lookup_app(app_name + ".desktop");
 
                 if (app != null) {
                     this._availableChats.push(app);
-                    if (settings.get_boolean("notify-chat")) {
-                        availableNotifiers.push(app);
+                    if (this._settings.get_boolean("notify-chat")) {
+                        this._availableNotifiers.push(app);
                     }
                 }
             }
@@ -306,14 +354,14 @@ const MessageMenu = GObject.registerClass(
 
         _getAppsBLOG(appsys) {
             //get available Blogging Apps
-            for (let mb_app of compatible_MBlogs) {
+            for (let mb_app of this._compatible_MBlogs) {
                 let app_name = mb_app;
                 let app = appsys.lookup_app(app_name + ".desktop");
 
                 if (app != null) {
                     this._availableMBlogs.push(app);
-                    if (settings.get_boolean("notify-mblogging")) {
-                        availableNotifiers.push(app);
+                    if (this._settings.get_boolean("notify-mblogging")) {
+                        this._availableNotifiers.push(app);
                     }
                 }
             }
@@ -361,182 +409,172 @@ const MessageMenu = GObject.registerClass(
     }
 );
 
-function _updateMessageStatus() {
-    // get all Messages
-    let sources = Main.messageTray.getSources();
-    let newMessage = false;
+class MessagingMenu {
+    constructor(uuid) {
+        this._uuid = uuid;
+    }
 
-    for (let source of sources) {
-        // check for new Chat Messages
-        if (
-            settings.get_boolean("notify-chat") &&
-            source.isChat &&
-            !source.isMuted &&
-            unseenMessageCheck(source)
-        ) {
-            newMessage = true;
-        } else if (source.app != null) {
-            newMessage = _checkNotifyEmailByID(source);
-        } else {
-            newMessage = _checkNotifyEmailByName(source);
+    _updateMessageStatus() {
+        // get all Messages
+        let sources = Main.messageTray.getSources();
+        let newMessage = false;
 
-            if (settings.get_boolean("notify-email")) {
-                newMessage = _checkNotifyHiddenEmail(source);
+        for (let source of sources) {
+            // check for new Chat Messages
+            if (
+                this._settings.get_boolean("notify-chat") &&
+                source.isChat &&
+                !source.isMuted &&
+                this._unseenMessageCheck(source)
+            ) {
+                newMessage = true;
+            } else if (source.app != null) {
+                newMessage = this._checkNotifyEmailByID(source);
+            } else {
+                newMessage = this._checkNotifyEmailByName(source);
+
+                if (this._settings.get_boolean("notify-email")) {
+                    newMessage = this._checkNotifyHiddenEmail(source);
+                }
+                if (this._settings.get_boolean("notify-mblogging")) {
+                    newMessage = this._checkNotifyMBlog(source);
+                }
             }
-            if (settings.get_boolean("notify-mblogging")) {
-                newMessage = _checkNotifyMBlog(source);
+        }
+        this._changeStatusIcon(newMessage);
+    }
+
+    _checkNotifyEmailByID(source) {
+        // check for Message from known Email App
+        let result = false;
+        for (let a_Notifier of this._indicator.AvailableNotifiers) {
+            let app_id = a_Notifier.get_id(); //e.g. thunderbird.desktop
+            if (
+                app_id.toLowerCase().includes(source.app.get_id().toLowerCase())
+            ) {
+                result = true;
             }
         }
+        return result;
     }
-    _changeStatusIcon(newMessage);
-}
 
-function _checkNotifyEmailByID(source) {
-    // check for Message from known Email App
-    let result = false;
-    for (let a_Notifier of availableNotifiers) {
-        let app_id = a_Notifier.get_id(); //e.g. thunderbird.desktop
-        if (app_id.toLowerCase().includes(source.app.get_id().toLowerCase())) {
-            result = true;
+    _checkNotifyEmailByName(source) {
+        let result = false;
+        for (let a_Notifier of this._indicator.AvailableNotifiers) {
+            let app_name = a_Notifier.get_name(); //e.g. Thunderbird Mail
+            if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
+                result = true;
+            }
+        }
+        return result;
+    }
+
+    _checkNotifyHiddenEmail(source) {
+        let result = false;
+        for (let a_Notifier of this._indicator
+            .Compatible_hidden_Email_Notifiers) {
+            let app_name = a_Notifier; //e.g. Mailnag
+            if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
+                result = true;
+            }
+        }
+        return result;
+    }
+
+    _checkNotifyMBlog(source) {
+        let result = false;
+        for (let a_Notifier of this._indicator
+            .Compatible_hidden_MBlog_Notifiers) {
+            let app_name = a_Notifier; //e.g. friends
+            if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
+                result = true;
+            }
+        }
+        return result;
+    }
+
+    _isSupported() {
+        let current_version = Config.PACKAGE_VERSION.split(".");
+        return current_version[0] >= 42 ? true : false;
+    }
+
+    _changeStatusIcon(newMessage) {
+        // Change Status Icon in Panel
+        if (newMessage && !this._iconChanged) {
+            let color;
+            if (this._isSupported) {
+                let strcolor = this._settings.get_string("color-rgba");
+                let arrColor = strcolor
+                    .replace("rgb(", "")
+                    .replace(")", "")
+                    .split(",");
+                color = _rgbToHex(
+                    parseInt(arrColor[0]),
+                    parseInt(arrColor[1]),
+                    parseInt(arrColor[2])
+                );
+            } else {
+                color = this._settings.get_string("color");
+            }
+            this._iconBox.set_style("color: " + color + ";");
+            this._iconChanged = true;
+        } else if (!newMessage && this._iconChanged) {
+            this._iconBox.set_style(this._originalStyle);
+            this._iconChanged = false;
         }
     }
-    return result;
-}
 
-function _checkNotifyEmailByName(source) {
-    let result = false;
-    for (let a_Notifier of availableNotifiers) {
-        let app_name = a_Notifier.get_name(); //e.g. Thunderbird Mail
-        if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
-            result = true;
-        }
-    }
-    return result;
-}
-
-function _checkNotifyHiddenEmail(source) {
-    let result = false;
-    for (let a_Notifier of compatible_hidden_Email_Notifiers) {
-        let app_name = a_Notifier; //e.g. Mailnag
-        if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
-            result = true;
-        }
-    }
-    return result;
-}
-
-function _checkNotifyMBlog(source) {
-    let result = false;
-    for (let a_Notifier of compatible_hidden_MBlog_Notifiers) {
-        let app_name = a_Notifier; //e.g. friends
-        if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
-            result = true;
-        }
-    }
-    return result;
-}
-
-function isSupported() {
-    let current_version = Config.PACKAGE_VERSION.split(".");
-    return current_version[0] >= 42 ? true : false;
-}
-
-function _changeStatusIcon(newMessage) {
-    // Change Status Icon in Panel
-    if (newMessage && !iconChanged) {
-        let color;
-        if (isSupported) {
-            let strcolor = settings.get_string("color-rgba");
-            let arrColor = strcolor
-                .replace("rgb(", "")
-                .replace(")", "")
-                .split(",");
-            color = _rgbToHex(
-                parseInt(arrColor[0]),
-                parseInt(arrColor[1]),
-                parseInt(arrColor[2])
-            );
+    _unseenMessageCheck(source) {
+        let unseen = false;
+        if (source.countVisible == undefined) {
+            unseen = source.unseenCount > 0;
         } else {
-            color = settings.get_string("color");
+            unseen = source.countVisible > 0;
         }
-        iconBox.set_style("color: " + color + ";");
-        iconChanged = true;
-    } else if (!newMessage && iconChanged) {
-        iconBox.set_style(originalStyle);
-        iconChanged = false;
+        return unseen;
+    }
+
+    _queuechanged() {
+        try {
+            this._updateMessageStatus();
+        } catch (err) {
+            /* If the extension is broken I don't want to break everything.
+             * We just catch the extension, print it and go on */
+            logError(err, "messagingmenu");
+        }
+    }
+
+    enable() {
+        this._settings = ExtensionUtils.getSettings(g_schema);
+        let icon_size = this._settings.get_int("icon-size");
+        this._indicator = new MessageMenu(this._settings, icon_size);
+
+        this._queuechanged_handler = Main.messageTray.connect(
+            "queue-changed",
+            this._queuechanged.bind(this)
+        );
+
+        const statusArea = Main.panel.statusArea;
+
+        Main.panel.addToStatusArea("messageMenu", this._indicator, 1);
+
+        this._iconBox = statusArea.messageMenu;
+        this._iconChanged = false;
+        this._originalStyle = this._iconBox.get_style();
+    }
+
+    disable() {
+        Main.messageTray.disconnect(_queuechanged_handler);
+        this._indicator.destroy();
+        this._indicator = null;
+        this._settings = null;
+        this._iconBox = null;
+        this._iconChanged = null;
+        this._originalStyle = null;
     }
 }
 
-function unseenMessageCheck(source) {
-    let unseen = false;
-    if (source.countVisible == undefined) {
-        unseen = source.unseenCount > 0;
-    } else {
-        unseen = source.countVisible > 0;
-    }
-    return unseen;
-}
-
-function _queuechanged() {
-    try {
-        _updateMessageStatus();
-    } catch (err) {
-        /* If the extension is broken I don't want to break everything.
-         * We just catch the extension, print it and go on */
-        logError(err, "messagingmenu");
-    }
-}
-
-function init() {
+function init(meta) {
     ExtensionUtils.initTranslations("messagingmenu");
-}
-
-function enable() {
-    settings = ExtensionUtils.getSettings(
-        "org.gnome.shell.extensions.messagingmenu"
-    );
-
-    compatible_Chats = settings
-        .get_string("compatible-chats")
-        .split(";")
-        .sort();
-    compatible_MBlogs = settings
-        .get_string("compatible-mblogs")
-        .split(";")
-        .sort(Intl.Collator().compare);
-    compatible_Emails = settings
-        .get_string("compatible-emails")
-        .split(";")
-        .sort(Intl.Collator().compare);
-    compatible_hidden_Email_Notifiers = settings
-        .get_string("compatible-hidden-email-notifiers")
-        .split(";")
-        .sort(Intl.Collator().compare);
-    compatible_hidden_MBlog_Notifiers = settings
-        .get_string("compatible-hidden-mblog-notifiers")
-        .split(";")
-        .sort(Intl.Collator().compare);
-    ICON_SIZE = settings.get_int("icon-size");
-    _indicator = new MessageMenu();
-
-    _queuechanged_handler = Main.messageTray.connect(
-        "queue-changed",
-        this._queuechanged.bind(this)
-    );
-
-    statusArea = Main.panel.statusArea;
-
-    Main.panel.addToStatusArea("messageMenu", _indicator, 1);
-
-    iconBox = statusArea.messageMenu;
-
-    originalStyle = iconBox.get_style();
-}
-
-function disable() {
-    Main.messageTray.disconnect(_queuechanged_handler);
-    _indicator.destroy();
-    _indicator = null;
-    settings = null;
-    ICON_SIZE = null;
+    return new MessagingMenu(meta.uuid);
 }
