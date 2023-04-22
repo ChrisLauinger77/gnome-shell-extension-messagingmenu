@@ -564,7 +564,7 @@ class MessagingMenu {
     }
 
     disable() {
-        Main.messageTray.disconnect(_queuechanged_handler);
+        Main.messageTray.disconnect(this._queuechanged_handler);
         this._indicator.destroy();
         this._indicator = null;
         this._settings = null;
