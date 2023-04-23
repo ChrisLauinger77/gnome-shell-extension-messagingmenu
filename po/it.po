@@ -102,7 +102,7 @@ msgstr "..."
 
 #: messagingmenu@lauinger-clan.de/prefs.js:349
 msgid "Select desktop file for "
-msgstr "Seleziona file desktop per"
+msgstr "Seleziona file desktop per "
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:45
 msgid "Notification Color (RGB)"
@@ -186,7 +186,7 @@ msgstr "L'icona cambia colore sui nuovi post del blog"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:21
 msgid "Notification Color HEX"
-msgstr "Colore della Notifica (Hex):"
+msgstr "Colore della Notifica (Hex)"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:22
 msgid "The color used to paint the Icon(GNOME 41 and before)"
@@ -208,7 +208,7 @@ msgid ""
 "desktop ending) delimited by semicolon"
 msgstr ""
 "nome con distinzione tra maiuscole e minuscole dei nomi dei file .desktop per avviare l'app (senza ."
-"desktop alla fine) delimitato da punto e virgola
+"desktop alla fine) delimitato da punto e virgola"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:36
 msgid "Compatible MBlogs"
