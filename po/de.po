@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-21 08:56+0200\n"
-"PO-Revision-Date: 2023-04-20 16:39+0200\n"
+"POT-Creation-Date: 2023-04-23 16:32+0200\n"
+"PO-Revision-Date: 2023-04-23 16:32+0200\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -104,12 +104,12 @@ msgid "Select desktop file for "
 msgstr "Desktop Datei auswählen für "
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:45
-msgid "Notification Color (RGB)"
+msgid "Notification Color (RGB):"
 msgstr "Benachrichtigungsfarbe (RGB):"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:56
-msgid "Icon size (pixel)"
-msgstr "Symbolgrösse (Pixel)"
+msgid "Icon size (pixel):"
+msgstr "Symbolgrösse (Pixel):"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:63
 msgid "Add menu"
@@ -235,7 +235,7 @@ msgstr "Kompatible versteckte Mikroblog Benachrichtigungen"
 msgid "Icon size"
 msgstr "Symbolgrösse"
 
-#~ msgid "Notification Color (RGB):"
+#~ msgid "Notification Color (RGB)"
 #~ msgstr "Benachrichtigungsfarbe (RGB):"
 
 #, fuzzy

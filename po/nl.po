@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-21 08:56+0200\n"
+"POT-Creation-Date: 2023-04-23 16:32+0200\n"
 "PO-Revision-Date: 2023-04-20 18:10+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
@@ -104,11 +104,12 @@ msgid "Select desktop file for "
 msgstr "Kies het desktopbestand van "
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:45
-msgid "Notification Color (RGB)"
-msgstr "Meldingskleur (in rgb)"
+msgid "Notification Color (RGB):"
+msgstr "Meldingskleur (in RGB):"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:56
-msgid "Icon size (pixel)"
+#, fuzzy
+msgid "Icon size (pixel):"
 msgstr "Pictogramgrootte (in pixels)"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:63
@@ -234,8 +235,8 @@ msgstr "Compatibele verborgen MBlog-meldingstoepassingen"
 msgid "Icon size"
 msgstr "Pictogramgrootte"
 
-#~ msgid "Notification Color (RGB):"
-#~ msgstr "Meldingskleur (in RGB):"
+#~ msgid "Notification Color (RGB)"
+#~ msgstr "Meldingskleur (in rgb)"
 
 #~ msgid "Alert on new Messages from other Apps"
 #~ msgstr "Meldingen tonen bij berichten van andere toepassingen"

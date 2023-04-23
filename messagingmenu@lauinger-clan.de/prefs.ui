@@ -42,7 +42,7 @@
         </child>
         <child>
           <object class="AdwActionRow" id="messagingmenu_row4">
-            <property name="title" translatable="yes">Notification Color (RGB)</property>
+            <property name="title" translatable="yes">Notification Color (RGB):</property>
             <property name="activatable-widget">color_setting_button</property>
             <child>
               <object class="GtkColorButton" id="color_setting_button">
@@ -53,7 +53,7 @@
         </child>
         <child>
           <object class="AdwActionRow" id="messagingmenu_row5">
-            <property name="title" translatable="yes">Icon size (pixel)</property>
+            <property name="title" translatable="yes">Icon size (pixel):</property>
           </object>
         </child>
       </object>
