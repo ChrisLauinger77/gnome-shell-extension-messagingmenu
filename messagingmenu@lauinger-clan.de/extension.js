@@ -4,20 +4,20 @@
  * See LICENSE.txt for details
  */
 
-const GObject = imports.gi.GObject;
-const Gio = imports.gi.Gio;
-const Shell = imports.gi.Shell;
-const St = imports.gi.St;
-const Main = imports.ui.main;
-const Util = imports.misc.util;
-const PanelMenu = imports.ui.panelMenu;
-const PopupMenu = imports.ui.popupMenu;
-const Panel = imports.ui.panel;
-const Gettext = imports.gettext.domain("messagingmenu");
-const _ = Gettext.gettext;
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
-const g_schema = "org.gnome.shell.extensions.messagingmenu";
+import Shell from "gi://Shell";
+import Gio from "gi://Gio";
+import GObject from "gi://GObject";
+import St from "gi://St";
+
+import * as Main from "resource:///org/gnome/shell/ui/main.js";
+import * as Util from "resource:///org/gnome/shell/misc/util.js";
+import * as PanelMenu from "resource:///org/gnome/shell/ui/panelMenu.js";
+import * as PopupMenu from "resource:///org/gnome/shell/ui/popupMenu.js";
+import {
+    Extension,
+    gettext as _,
+} from "resource:///org/gnome/shell/extensions/extension.js";
+
 const _rgbToHex = (r, g, b) =>
     "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("");
 
@@ -46,7 +46,7 @@ const MessageMenuItem = GObject.registerClass(
 
 const MessageMenu = GObject.registerClass(
     class MessageMenu_MessageMenu extends PanelMenu.Button {
-        _init(settings, intIcon_size) {
+        _init(settings, intIcon_size, Me) {
             this._settings = settings;
             this._intIcon_size = intIcon_size;
             super._init(0.0, "MessageMenu");
@@ -123,7 +123,7 @@ const MessageMenu = GObject.registerClass(
             if (this._geary != null) {
                 this._buildMenuGEARY();
             }
-            this._buildMenu();
+            this._buildMenu(Me);
         }
 
         get AvailableNotifiers() {
@@ -270,7 +270,7 @@ const MessageMenu = GObject.registerClass(
             this.menu.addMenuItem(this.comp);
         }
 
-        _buildMenu() {
+        _buildMenu(Me) {
             for (let e_app of this._availableEmails) {
                 let newLauncher = new MessageMenuItem(
                     e_app,
@@ -302,7 +302,7 @@ const MessageMenu = GObject.registerClass(
             // Add an entry-point for settings
             this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
             const settingsItem = this.menu.addAction(_("Settings"), () =>
-                ExtensionUtils.openPrefs()
+                Me._openPreferences()
             );
             // Ensure the settings are unavailable when the screen is locked
             settingsItem.visible = Main.sessionMode.allowSettings;
@@ -409,11 +409,7 @@ const MessageMenu = GObject.registerClass(
     }
 );
 
-class MessagingMenu {
-    constructor(uuid) {
-        this._uuid = uuid;
-    }
-
+export default class MessagingMenu extends Extension {
     _updateMessageStatus() {
         // get all Messages
         let sources = Main.messageTray.getSources();
@@ -493,29 +489,20 @@ class MessagingMenu {
         return result;
     }
 
-    _isSupported() {
-        let current_version = Config.PACKAGE_VERSION.split(".");
-        return current_version[0] >= 42 ? true : false;
-    }
-
     _changeStatusIcon(newMessage) {
         // Change Status Icon in Panel
         if (newMessage && !this._iconChanged) {
             let color;
-            if (this._isSupported) {
-                let strcolor = this._settings.get_string("color-rgba");
-                let arrColor = strcolor
-                    .replace("rgb(", "")
-                    .replace(")", "")
-                    .split(",");
-                color = _rgbToHex(
-                    parseInt(arrColor[0]),
-                    parseInt(arrColor[1]),
-                    parseInt(arrColor[2])
-                );
-            } else {
-                color = this._settings.get_string("color");
-            }
+            let strcolor = this._settings.get_string("color-rgba");
+            let arrColor = strcolor
+                .replace("rgb(", "")
+                .replace(")", "")
+                .split(",");
+            color = _rgbToHex(
+                parseInt(arrColor[0]),
+                parseInt(arrColor[1]),
+                parseInt(arrColor[2])
+            );
             this._iconBox.set_style("color: " + color + ";");
             this._iconChanged = true;
         } else if (!newMessage && this._iconChanged) {
@@ -544,10 +531,14 @@ class MessagingMenu {
         }
     }
 
+    _openPreferences() {
+        this.openPreferences();
+    }
+
     enable() {
-        this._settings = ExtensionUtils.getSettings(g_schema);
+        this._settings = this.getSettings();
         let icon_size = this._settings.get_int("icon-size");
-        this._indicator = new MessageMenu(this._settings, icon_size);
+        this._indicator = new MessageMenu(this._settings, icon_size, this);
 
         this._queuechanged_handler = Main.messageTray.connect(
             "queue-changed",
@@ -572,9 +563,4 @@ class MessagingMenu {
         this._iconChanged = null;
         this._originalStyle = null;
     }
-}
-
-function init(meta) {
-    ExtensionUtils.initTranslations("messagingmenu");
-    return new MessagingMenu(meta.uuid);
 }

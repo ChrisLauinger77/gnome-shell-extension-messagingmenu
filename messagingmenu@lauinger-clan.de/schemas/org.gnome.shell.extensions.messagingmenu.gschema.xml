@@ -1,6 +1,5 @@
 <schemalist>
-  <schema id="org.gnome.shell.extensions.messagingmenu"
-      path="/org/gnome/shell/extensions/messagingmenu/">
+  <schema id="org.gnome.shell.extensions.messagingmenu" path="/org/gnome/shell/extensions/messagingmenu/">
     <key name="notify-email" type="b">
       <default>true</default>
       <summary>Alert on new Email</summary>
@@ -55,6 +54,11 @@
       <default>22</default>
       <summary>Icon size</summary>
       <description>Size of the app icons in the menu</description>
+    </key>
+    <key name="last-choosen-file" type="s">
+      <default>''</default>
+      <summary>Last choosen file</summary>
+      <description></description>
     </key>
   </schema>
 </schemalist>
