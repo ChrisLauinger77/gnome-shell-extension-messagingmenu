@@ -8,5 +8,5 @@
 "url": "https://github.com/ChrisLauinger77/messagingmenu",
 "settings-schema": "org.gnome.shell.extensions.messagingmenu",
 "donations": { "github": "ChrisLauinger77", "paypal": "ChrisLauinger" },
-"version": 36
+"version": 37
 }
