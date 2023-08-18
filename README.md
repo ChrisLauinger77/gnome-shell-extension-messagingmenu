@@ -49,6 +49,10 @@ Pull requests are welcome.
 
 To update the translation files run ./update-translation-po-files.sh in the extensions directory after your code changes are finished. This will update the files in po folder. Then poedit (https://poedit.net/download) can be used to translate the strings. poedit can also be used to create new localization files.
 
+# ✨️ Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=ChrisLauinger77/messagingmenu)](https://github.com/ChrisLauinger77/messagingmenu/graphs/contributors)
+
 ## License
 
 Copyright (C) 2012 Andreas Wilhelm, see [LICENSE.txt](LICENSE.txt) for details
