@@ -43,12 +43,12 @@
     <key name="compatible-hidden-email-notifiers" type="s">
       <default>'gmail-notify;mail-notification;Mailnag;Thunderbird'</default>
       <summary>Compatible hidden Email Notifiers</summary>
-      <description>Must be their Notificationtitle, because lookup_app doesnt work here</description>
+      <description>Must be their Notificationtitle, because lookup_app does not work here</description>
     </key>
     <key name="compatible-hidden-mblog-notifiers" type="s">
       <default>'friends;GFeedLine;gwibber'</default>
       <summary>Compatible hidden MBlog Notifiers</summary>
-      <description>Must be their Notificationtitle, because lookup_app doesnt work here</description>
+      <description>Must be their Notificationtitle, because lookup_app does not work here</description>
     </key>
     <key name="icon-size" type="i">
       <default>22</default>
@@ -57,7 +57,7 @@
     </key>
     <key name="last-choosen-file" type="s">
       <default>''</default>
-      <summary>Last choosen file</summary>
+      <summary>Last chosen file</summary>
       <description></description>
     </key>
   </schema>
