@@ -5,7 +5,7 @@
 "original-author": "sinisterstuf",
 "gettext-domain": "messagingmenu",
 "description": "A Messaging Menu for the Gnome Shell. All Email and Chat Applications in one Place.",
-"url": "https://github.com/ChrisLauinger77/messagingmenu",
+"url": "https://github.com/ChrisLauinger77/gnome-shell-extension-messagingmenu",
 "settings-schema": "org.gnome.shell.extensions.messagingmenu",
 "donations": { "github": "ChrisLauinger77", "paypal": "ChrisLauinger" },
 "version-name": "46.0"
