@@ -55,10 +55,5 @@
       <summary>Icon size</summary>
       <description>Size of the app icons in the menu</description>
     </key>
-    <key name="last-choosen-file" type="s">
-      <default>''</default>
-      <summary>Last chosen file</summary>
-      <description></description>
-    </key>
   </schema>
 </schemalist>
