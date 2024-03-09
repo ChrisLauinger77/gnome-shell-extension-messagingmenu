@@ -36,8 +36,8 @@ Originally forked from https://github.com/screenfreeze/messagingmenu
 Use the `master` branch.
 
 ```bash
-git clone https://github.com/ChrisLauinger77/messagingmenu.git
-cd messagingmenu.git
+git clone https://github.com/ChrisLauinger77/gnome-shell-extension-messagingmenu.git
+cd gnome-shell-extension-messagingmenu
 ./install.sh
 ```
 
