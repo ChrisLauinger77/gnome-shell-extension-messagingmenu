@@ -33,7 +33,7 @@ Originally forked from https://github.com/screenfreeze/messagingmenu
 
 ### Install from source
 
-Use the `master` branch.
+Use the `main` branch.
 
 ```bash
 git clone https://github.com/ChrisLauinger77/gnome-shell-extension-messagingmenu.git
