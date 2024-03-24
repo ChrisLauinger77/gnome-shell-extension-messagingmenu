@@ -155,6 +155,7 @@ export default class AdwPrefs extends ExtensionPreferences {
       this._addMenuChangeDesc.bind(this, cmb_add, group_add)
     );
     let button_add = builder.get_object("button_add_menu_add");
+    button_add.set_css_classes(["suggested-action"]);
     let entry_add = builder.get_object("entry_add_menu_name");
     button_add.connect(
       "clicked",
@@ -163,7 +164,6 @@ export default class AdwPrefs extends ExtensionPreferences {
     let adwrow = builder.get_object("messagingmenu_row_add2");
     adwrow.set_tooltip_text(_("Usually located in '/usr/share/applications'"));
     let buttonfilechooser = new Gtk.Button({
-      css_classes: ["suggested-action"],
       label: _("..."),
       valign: Gtk.Align.CENTER,
     });
