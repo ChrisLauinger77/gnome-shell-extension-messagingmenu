@@ -8,5 +8,5 @@
 "url": "https://github.com/ChrisLauinger77/gnome-shell-extension-messagingmenu",
 "settings-schema": "org.gnome.shell.extensions.messagingmenu",
 "donations": { "github": "ChrisLauinger77", "paypal": "ChrisLauinger" },
-"version-name": "46.1"
+"version-name": "46.2"
 }
