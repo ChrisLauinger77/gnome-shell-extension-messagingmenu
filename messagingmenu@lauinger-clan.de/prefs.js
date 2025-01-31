@@ -17,6 +17,60 @@ const handleError = (error) => {
   return null;
 };
 
+const AppChooser = GObject.registerClass(
+  class AppChooser extends Adw.Window {
+    constructor(params = {}) {
+      super(params);
+      let adwtoolbarview = new Adw.ToolbarView();
+      let adwheaderbar = new Adw.HeaderBar();
+      adwtoolbarview.add_top_bar(adwheaderbar);
+      this.set_content(adwtoolbarview);
+      let scrolledwindow = new Gtk.ScrolledWindow();
+      adwtoolbarview.set_content(scrolledwindow);
+      this.listBox = new Gtk.ListBox({
+        selection_mode: Gtk.SelectionMode.SINGLE,
+      });
+      scrolledwindow.set_child(this.listBox);
+      this.selectBtn = new Gtk.Button({
+        label: _("Select"),
+        css_classes: ["suggested-action"],
+      });
+      this.cancelBtn = new Gtk.Button({ label: _("Cancel") });
+      adwheaderbar.pack_start(this.cancelBtn);
+      adwheaderbar.pack_end(this.selectBtn);
+      const apps = Gio.AppInfo.get_all();
+
+      for (const app of apps) {
+        if (app.should_show() === false) continue;
+        const row = new Adw.ActionRow();
+        row.title = app.get_display_name();
+        row.subtitle = app.get_id();
+        row.subtitleLines = 1;
+        const icon = new Gtk.Image({ gicon: app.get_icon() });
+        row.add_prefix(icon);
+        this.listBox.append(row);
+      }
+
+      this.cancelBtn.connect("clicked", () => {
+        this.close();
+      });
+    }
+
+    showChooser() {
+      return new Promise((resolve) => {
+        const signalId = this.selectBtn.connect("clicked", () => {
+          this.close();
+          this.selectBtn.disconnect(signalId);
+          const row = this.listBox.get_selected_row();
+          resolve(row);
+        });
+        this.present();
+      });
+    }
+  }
+);
+
+
 export default class AdwPrefs extends ExtensionPreferences {
   _addMenuChangeDesc(cmb_add, group_add) {
     if (cmb_add.get_active() < 3) {
@@ -29,8 +83,8 @@ export default class AdwPrefs extends ExtensionPreferences {
   }
 
   _addMenu(cmb_add, entry_add, builder) {
-    if (entry_add.text == "") {
-      return false;
+    if (entry_add.text === "") {
+      return;
     }
     let strsettings;
     let strgroup;
@@ -56,7 +110,7 @@ export default class AdwPrefs extends ExtensionPreferences {
         strgroup = "messagingmenu_group_mblognotifiers";
         break;
       default:
-        log("_addMenu did not find get_active_id");
+        console.log("_addMenu did not find get_active_id");
     }
     let valuesettings = this.getSettings().get_string(strsettings);
     if (!valuesettings.toLowerCase().includes(entry_add.text.toLowerCase())) {
@@ -250,55 +304,3 @@ export default class AdwPrefs extends ExtensionPreferences {
   }
 }
 
-const AppChooser = GObject.registerClass(
-  class AppChooser extends Adw.Window {
-    _init(params = {}) {
-      super._init(params);
-      let adwtoolbarview = new Adw.ToolbarView();
-      let adwheaderbar = new Adw.HeaderBar();
-      adwtoolbarview.add_top_bar(adwheaderbar);
-      this.set_content(adwtoolbarview);
-      let scrolledwindow = new Gtk.ScrolledWindow();
-      adwtoolbarview.set_content(scrolledwindow);
-      this.listBox = new Gtk.ListBox({
-        selection_mode: Gtk.SelectionMode.SINGLE,
-      });
-      scrolledwindow.set_child(this.listBox);
-      this.selectBtn = new Gtk.Button({
-        label: _("Select"),
-        css_classes: ["suggested-action"],
-      });
-      this.cancelBtn = new Gtk.Button({ label: _("Cancel") });
-      adwheaderbar.pack_start(this.cancelBtn);
-      adwheaderbar.pack_end(this.selectBtn);
-      const apps = Gio.AppInfo.get_all();
-
-      for (const app of apps) {
-        if (app.should_show() === false) continue;
-        const row = new Adw.ActionRow();
-        row.title = app.get_display_name();
-        row.subtitle = app.get_id();
-        row.subtitleLines = 1;
-        const icon = new Gtk.Image({ gicon: app.get_icon() });
-        row.add_prefix(icon);
-        this.listBox.append(row);
-      }
-
-      this.cancelBtn.connect("clicked", () => {
-        this.close();
-      });
-    }
-
-    showChooser() {
-      return new Promise((resolve) => {
-        const signalId = this.selectBtn.connect("clicked", () => {
-          this.close();
-          this.selectBtn.disconnect(signalId);
-          const row = this.listBox.get_selected_row();
-          resolve(row);
-        });
-        this.present();
-      });
-    }
-  }
-);

@@ -23,8 +23,8 @@ const _rgbToHex = (r, g, b) =>
 
 const MessageMenuItem = GObject.registerClass(
     class MessageMenu_MessageMenuItem extends PopupMenu.PopupBaseMenuItem {
-        _init(app, intIcon_size) {
-            super._init();
+        constructor(app, intIcon_size) {
+            super();
             this._app = app;
 
             this.label = new St.Label({
@@ -89,10 +89,10 @@ const MessageMenu = GObject.registerClass(
             this.new_msg_string = _("Compose New Message");
             this.contacts_string = _("Contacts");
 
-            this._availableEmails = new Array();
-            this._availableChats = new Array();
-            this._availableMBlogs = new Array();
-            this._availableNotifiers = new Array();
+            this._availableEmails = [];
+            this._availableChats = [];
+            this._availableMBlogs = [];
+            this._availableNotifiers = [];
 
             this._thunderbird = null;
             this._icedove = null;
@@ -105,22 +105,22 @@ const MessageMenu = GObject.registerClass(
             this._getAppsEMAIL(appsys);
             this._getAppsCHAT(appsys);
             this._getAppsBLOG(appsys);
-            if (this._evolution != null) {
+            if (this._evolution !== null) {
                 this._buildMenuEVOLUTION();
             }
-            if (this._thunderbird != null) {
+            if (this._thunderbird !== null) {
                 this._buildMenuTHUNDERBIRD();
             }
-            if (this._icedove != null) {
+            if (this._icedove !== null) {
                 this._buildMenuICEDOVE();
             }
-            if (this._kmail != null) {
+            if (this._kmail !== null) {
                 this._buildMenuKMAIL();
             }
-            if (this._claws != null) {
+            if (this._claws !== null) {
                 this._buildMenuCLAWS();
             }
-            if (this._geary != null) {
+            if (this._geary !== null) {
                 this._buildMenuGEARY();
             }
             this._buildMenu(Me);
@@ -313,7 +313,7 @@ const MessageMenu = GObject.registerClass(
             //get available Email Apps
             for (let app_name of this._compatible_Emails) {
                 let app = appsys.lookup_app(app_name + ".desktop");
-                if (app != null) {
+                if (app !== null) {
                     // filter Apps with special Menus
                     if (app_name.toLowerCase().includes("thunderbird")) {
                         this._thunderbird = app;
@@ -343,7 +343,7 @@ const MessageMenu = GObject.registerClass(
                 let app_name = c_app;
                 let app = appsys.lookup_app(app_name + ".desktop");
 
-                if (app != null) {
+                if (app !==null) {
                     this._availableChats.push(app);
                     if (this._settings.get_boolean("notify-chat")) {
                         this._availableNotifiers.push(app);
@@ -358,7 +358,7 @@ const MessageMenu = GObject.registerClass(
                 let app_name = mb_app;
                 let app = appsys.lookup_app(app_name + ".desktop");
 
-                if (app != null) {
+                if (app !==null) {
                     this._availableMBlogs.push(app);
                     if (this._settings.get_boolean("notify-mblogging")) {
                         this._availableNotifiers.push(app);
@@ -424,7 +424,7 @@ export default class MessagingMenu extends Extension {
                 this._unseenMessageCheck(source)
             ) {
                 newMessage = true;
-            } else if (source.app != null) {
+            } else if (source.app !== null) {
                 newMessage = this._checkNotifyEmailByID(source);
             } else {
                 newMessage = this._checkNotifyEmailByName(source);
@@ -513,7 +513,7 @@ export default class MessagingMenu extends Extension {
 
     _unseenMessageCheck(source) {
         let unseen = false;
-        if (source.countVisible == undefined) {
+        if (source.countVisible === undefined) {
             unseen = source.unseenCount > 0;
         } else {
             unseen = source.countVisible > 0;
@@ -527,7 +527,7 @@ export default class MessagingMenu extends Extension {
         } catch (err) {
             /* If the extension is broken I don't want to break everything.
              * We just catch the extension, print it and go on */
-            logError(err, "messagingmenu");
+            console.error(err, "messagingmenu");
         }
     }
 
