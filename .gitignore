@@ -1,7 +1,5 @@
 **/locale/*/
 *.zip
 gschemas.compiled
-.prettierrc
 *.mo
 *.po~
-.editorconfig
