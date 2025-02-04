@@ -46,8 +46,8 @@ const MessageMenuItem = GObject.registerClass(
 
 const MessageMenu = GObject.registerClass(
     class MessageMenu_MessageMenu extends PanelMenu.Button {
-        _init(settings, intIcon_size, Me) {
-            this._settings = settings;
+        _init(Me, intIcon_size) {
+            this._settings = Me._settings;
             this._intIcon_size = intIcon_size;
             super._init(0.0, "MessageMenu");
 
@@ -343,7 +343,7 @@ const MessageMenu = GObject.registerClass(
                 let app_name = c_app;
                 let app = appsys.lookup_app(app_name + ".desktop");
 
-                if (app !==null) {
+                if (app !== null) {
                     this._availableChats.push(app);
                     if (this._settings.get_boolean("notify-chat")) {
                         this._availableNotifiers.push(app);
@@ -358,7 +358,7 @@ const MessageMenu = GObject.registerClass(
                 let app_name = mb_app;
                 let app = appsys.lookup_app(app_name + ".desktop");
 
-                if (app !==null) {
+                if (app !== null) {
                     this._availableMBlogs.push(app);
                     if (this._settings.get_boolean("notify-mblogging")) {
                         this._availableNotifiers.push(app);
@@ -538,7 +538,7 @@ export default class MessagingMenu extends Extension {
     enable() {
         this._settings = this.getSettings();
         let icon_size = this._settings.get_int("icon-size");
-        this._indicator = new MessageMenu(this._settings, icon_size, this);
+        this._indicator = new MessageMenu(this, icon_size);
 
         this._queuechanged_handler = Main.messageTray.connect(
             "queue-changed",

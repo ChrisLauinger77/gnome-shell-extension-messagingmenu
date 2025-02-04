@@ -8,36 +8,18 @@
       <object class="AdwPreferencesGroup" id="messagingmenu_group_settings">
         <property name="title" translatable="yes">Settings</property>
         <child>
-          <object class="AdwActionRow" id="messagingmenu_row1">
+          <object class="AdwSwitchRow" id="messagingmenu_row1">
             <property name="title" translatable="yes">Email Notification:</property>
-            <property name="activatable-widget">email_setting_switch</property>
-            <child>
-              <object class="GtkSwitch" id="email_setting_switch">
-                <property name="valign">center</property>
-              </object>
-            </child>
           </object>
         </child>
         <child>
-          <object class="AdwActionRow" id="messagingmenu_row2">
+          <object class="AdwSwitchRow" id="messagingmenu_row2">
             <property name="title" translatable="yes">Chat Notification:</property>
-            <property name="activatable-widget">chat_setting_switch</property>
-            <child>
-              <object class="GtkSwitch" id="chat_setting_switch">
-                <property name="valign">center</property>
-              </object>
-            </child>
           </object>
         </child>
         <child>
-          <object class="AdwActionRow" id="messagingmenu_row3">
+          <object class="AdwSwitchRow" id="messagingmenu_row3">
             <property name="title" translatable="yes">Micro Blogging Notification:</property>
-            <property name="activatable-widget">mblogging_setting_switch</property>
-            <child>
-              <object class="GtkSwitch" id="mblogging_setting_switch">
-                <property name="valign">center</property>
-              </object>
-            </child>
           </object>
         </child>
         <child>
@@ -52,8 +34,17 @@
           </object>
         </child>
         <child>
-          <object class="AdwActionRow" id="messagingmenu_row5">
+          <object class="AdwSpinRow" id="messagingmenu_row5">
             <property name="title" translatable="yes">Icon size (pixel):</property>
+            <property name="adjustment">
+              <object class="GtkAdjustment">
+                <property name="lower">12</property>
+                <property name="upper">48</property>
+                <property name="value">22</property>
+                <property name="page-increment">10</property>
+                <property name="step-increment">1</property>
+              </object>
+            </property>
           </object>
         </child>
       </object>
@@ -63,33 +54,24 @@
         <property name="title" translatable="yes">Add menu</property>
         <property name="description" translatable="yes">Name of .desktop files without .desktop ending</property>
         <child>
-          <object class="AdwActionRow" id="messagingmenu_row_add1">
-            <property name="title" translatable="yes">Type:</property>
-            <property name="activatable-widget">messagingmenu_cmb_add</property>
-            <child>
-              <object class="GtkComboBoxText" id="messagingmenu_cmb_add">
-                <property name="valign">center</property>
-                <property name="active-id">email</property>
-                  <items>
-                    <item translatable="yes" id="email">Email</item>
-                    <item translatable="yes" id="chat">Chat</item>
-                    <item translatable="yes" id="microblogging">Micro blogging</item>
-                    <item translatable="yes" id="emailnotifier">Email notifier</item>
-                    <item translatable="yes" id="microbloggingnotifier">Micro blogging notifier</item>
-                </items>
-              </object>
-            </child>
+        <object class="AdwComboRow" id="messagingmenu_cmb_add">
+        <property name="title" translatable="yes">Type:</property>
+        <property name="model">
+          <object class="GtkStringList">
+            <items>
+              <item translatable="yes">Email</item>
+              <item translatable="yes">Chat</item>
+              <item translatable="yes">Micro blogging</item>
+              <item translatable="yes">Email notifier</item>
+              <item translatable="yes">Micro blogging notifier</item>
+            </items>
           </object>
+        </property>
+      </object>
         </child>
         <child>
-          <object class="AdwActionRow" id="messagingmenu_row_add2">
+          <object class="AdwEntryRow" id="messagingmenu_row_add2">
             <property name="title" translatable="yes">Name:</property>
-            <property name="activatable-widget">entry_add_menu_name</property>
-            <child>
-              <object class="GtkEntry" id="entry_add_menu_name">
-                <property name="valign">center</property>
-              </object>
-            </child>
           </object>
         </child>
         <child>
