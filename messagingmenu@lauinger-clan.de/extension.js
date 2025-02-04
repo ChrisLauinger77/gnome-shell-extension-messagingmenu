@@ -424,7 +424,7 @@ export default class MessagingMenu extends Extension {
                 this._unseenMessageCheck(source)
             ) {
                 newMessage = true;
-            } else if (source.app !== null) {
+            } else if (source.app) {
                 newMessage = this._checkNotifyEmailByID(source);
             } else {
                 newMessage = this._checkNotifyEmailByName(source);
