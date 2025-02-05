@@ -82,7 +82,7 @@ export default class AdwPrefs extends ExtensionPreferences {
     }
 
     _addMenu(cmb_add, entry_add, builder) {
-        if (entry_add.get_text === "") {
+        if (entry_add.get_text() === "") {
             return;
         }
         let strsettings;
