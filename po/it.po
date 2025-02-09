@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-09 10:18+0100\n"
+"POT-Creation-Date: 2025-02-09 13:54+0100\n"
 "PO-Revision-Date: 2024-03-09 10:21+0100\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Italian\n"
@@ -33,129 +33,124 @@ msgstr "Contatti"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:24
-#: messagingmenu@lauinger-clan.de/prefs.ui:64
-#: messagingmenu@lauinger-clan.de/prefs.ui:117
-#: messagingmenu@lauinger-clan.de/prefs.ui:128
-#: messagingmenu@lauinger-clan.de/prefs.ui:139
+#: messagingmenu@lauinger-clan.de/prefs.js:35
+msgid "Select"
+msgstr "Seleziona"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:38
+msgid "Cancel"
+msgstr "Annulla"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:77
+#: messagingmenu@lauinger-clan.de/prefs.ui:55
+#: messagingmenu@lauinger-clan.de/prefs.ui:99
+#: messagingmenu@lauinger-clan.de/prefs.ui:110
+#: messagingmenu@lauinger-clan.de/prefs.ui:121
 msgid "Name of .desktop files without .desktop ending"
 msgstr "Nome dei file .desktop senza estensione .desktop alla fine"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:27
-#: messagingmenu@lauinger-clan.de/prefs.ui:150
-#: messagingmenu@lauinger-clan.de/prefs.ui:156
+#: messagingmenu@lauinger-clan.de/prefs.js:80
+#: messagingmenu@lauinger-clan.de/prefs.ui:132
+#: messagingmenu@lauinger-clan.de/prefs.ui:138
 msgid "Notifier title"
-msgstr "Email di Notifica"
+msgstr "Titolo del Notificatore"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:103
+#: messagingmenu@lauinger-clan.de/prefs.js:138
 msgid "Toggle email notification"
 msgstr "Attiva/disattiva notifica e-mail"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:111
+#: messagingmenu@lauinger-clan.de/prefs.js:146
 msgid "Toggle chat notification"
 msgstr "Attiva/disattiva notifica chat"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:122
+#: messagingmenu@lauinger-clan.de/prefs.js:155
 msgid "Toggle micro blogging notification"
 msgstr "Attiva/disattiva notifica micro blog"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:131
+#: messagingmenu@lauinger-clan.de/prefs.js:164
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:25
 msgid "Notification Color RGB"
 msgstr "Colore della Notifica (RGB)"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:144
-#: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:56
-msgid "Size of the app icons in the menu"
-msgstr "Dimensioni delle icone delle app nel menu"
-
-#: messagingmenu@lauinger-clan.de/prefs.js:164
+#: messagingmenu@lauinger-clan.de/prefs.js:195
 msgid "Usually located in '/usr/share/applications'"
 msgstr "Di solito si trova in '/usr/share/applications'"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:167
+#: messagingmenu@lauinger-clan.de/prefs.js:198
 msgid "..."
 msgstr "..."
 
-#: messagingmenu@lauinger-clan.de/prefs.js:232
+#: messagingmenu@lauinger-clan.de/prefs.js:262
 msgid "Select app"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:268
-msgid "Select"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:271
-msgid "Cancel"
-msgstr ""
+msgstr "Seleziona app"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:12
 msgid "Email Notification:"
 msgstr "Email di Notifica:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:23
+#: messagingmenu@lauinger-clan.de/prefs.ui:17
 msgid "Chat Notification:"
 msgstr "Notifica Chat:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:34
+#: messagingmenu@lauinger-clan.de/prefs.ui:22
 msgid "Micro Blogging Notification:"
 msgstr "Notifica Microblog:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:45
+#: messagingmenu@lauinger-clan.de/prefs.ui:27
 msgid "Notification Color (RGB):"
 msgstr "Colore della Notifica (RGB):"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:56
+#: messagingmenu@lauinger-clan.de/prefs.ui:38
 msgid "Icon size (pixel):"
 msgstr "Dimensione icona (pixel):"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:63
+#: messagingmenu@lauinger-clan.de/prefs.ui:54
 msgid "Add menu"
 msgstr "Aggiungi menù"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:67
+#: messagingmenu@lauinger-clan.de/prefs.ui:58
 msgid "Type:"
 msgstr "Tipo:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:74
-#: messagingmenu@lauinger-clan.de/prefs.ui:112
-#: messagingmenu@lauinger-clan.de/prefs.ui:116
+#: messagingmenu@lauinger-clan.de/prefs.ui:62
+#: messagingmenu@lauinger-clan.de/prefs.ui:94
+#: messagingmenu@lauinger-clan.de/prefs.ui:98
 msgid "Email"
 msgstr "Email"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:75
-#: messagingmenu@lauinger-clan.de/prefs.ui:123
-#: messagingmenu@lauinger-clan.de/prefs.ui:127
+#: messagingmenu@lauinger-clan.de/prefs.ui:63
+#: messagingmenu@lauinger-clan.de/prefs.ui:105
+#: messagingmenu@lauinger-clan.de/prefs.ui:109
 msgid "Chat"
 msgstr "Chat"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:76
-#: messagingmenu@lauinger-clan.de/prefs.ui:134
-#: messagingmenu@lauinger-clan.de/prefs.ui:138
+#: messagingmenu@lauinger-clan.de/prefs.ui:64
+#: messagingmenu@lauinger-clan.de/prefs.ui:116
+#: messagingmenu@lauinger-clan.de/prefs.ui:120
 msgid "Micro blogging"
-msgstr "Notifica Microblog"
+msgstr "Microblogging"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:77
-#: messagingmenu@lauinger-clan.de/prefs.ui:149
+#: messagingmenu@lauinger-clan.de/prefs.ui:65
+#: messagingmenu@lauinger-clan.de/prefs.ui:131
 msgid "Email notifier"
-msgstr "Email di Notifica"
+msgstr "Notificatore di Email"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:78
-#: messagingmenu@lauinger-clan.de/prefs.ui:155
+#: messagingmenu@lauinger-clan.de/prefs.ui:66
+#: messagingmenu@lauinger-clan.de/prefs.ui:137
 msgid "Micro blogging notifier"
-msgstr "Notifica Microblog"
+msgstr "Notificatore di Microblogging"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:86
+#: messagingmenu@lauinger-clan.de/prefs.ui:74
 msgid "Name:"
 msgstr "Nome:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:101
+#: messagingmenu@lauinger-clan.de/prefs.ui:83
 msgid "Add"
 msgstr "Aggiungi"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:145
+#: messagingmenu@lauinger-clan.de/prefs.ui:127
 msgid "Notifier"
-msgstr "Notifica"
+msgstr "Notificatore"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:5
 msgid "Alert on new Email"
@@ -203,8 +198,8 @@ msgstr "Chat compatibili"
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:36
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:41
 msgid ""
-"case sensitive name of the .desktop file names to start the app (without ."
-"desktop ending) delimited by semicolon"
+"case sensitive name of the .desktop file names to start the app "
+"(without .desktop ending) delimited by semicolon"
 msgstr ""
 "nome con distinzione tra maiuscole e minuscole dei nomi dei file .desktop "
 "per avviare l'app (senza .desktop alla fine) delimitato da punto e virgola"
@@ -235,6 +230,10 @@ msgstr "Notificatori MBlog nascosti compatibili"
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:55
 msgid "Icon size"
 msgstr "Dimensione icona"
+
+#: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:56
+msgid "Size of the app icons in the menu"
+msgstr "Dimensioni delle icone delle app nel menu"
 
 #~ msgid "Notification Color (Hex):"
 #~ msgstr "Colore della Notifica (Hex):"

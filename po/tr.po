@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-09 10:18+0100\n"
+"POT-Creation-Date: 2025-02-09 13:54+0100\n"
 "PO-Revision-Date: 2024-03-09 10:23+0100\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Turkish <>\n"
@@ -32,153 +32,148 @@ msgstr "Kişiler"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:24
-#: messagingmenu@lauinger-clan.de/prefs.ui:64
-#: messagingmenu@lauinger-clan.de/prefs.ui:117
-#: messagingmenu@lauinger-clan.de/prefs.ui:128
-#: messagingmenu@lauinger-clan.de/prefs.ui:139
+#: messagingmenu@lauinger-clan.de/prefs.js:35
+msgid "Select"
+msgstr "Seç"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:38
+msgid "Cancel"
+msgstr "İptal"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:77
+#: messagingmenu@lauinger-clan.de/prefs.ui:55
+#: messagingmenu@lauinger-clan.de/prefs.ui:99
+#: messagingmenu@lauinger-clan.de/prefs.ui:110
+#: messagingmenu@lauinger-clan.de/prefs.ui:121
 msgid "Name of .desktop files without .desktop ending"
-msgstr ""
+msgstr ".desktop uzantısı olmadan .desktop dosyalarının adı"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:27
-#: messagingmenu@lauinger-clan.de/prefs.ui:150
-#: messagingmenu@lauinger-clan.de/prefs.ui:156
+#: messagingmenu@lauinger-clan.de/prefs.js:80
+#: messagingmenu@lauinger-clan.de/prefs.ui:132
+#: messagingmenu@lauinger-clan.de/prefs.ui:138
 msgid "Notifier title"
-msgstr "Eposta Bildirimi"
+msgstr "Bildirim başlığı"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:103
+#: messagingmenu@lauinger-clan.de/prefs.js:138
 msgid "Toggle email notification"
-msgstr "Eposta Bildirimi"
+msgstr "E-posta bildirimini aç/kapat"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:111
+#: messagingmenu@lauinger-clan.de/prefs.js:146
 msgid "Toggle chat notification"
-msgstr "Sohbet Bildirimi"
+msgstr "Sohbet bildirimini aç/kapat"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:122
+#: messagingmenu@lauinger-clan.de/prefs.js:155
 msgid "Toggle micro blogging notification"
-msgstr "Mikroblog Bildirimi"
+msgstr "Mikro blog bildirimini aç/kapat"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:131
+#: messagingmenu@lauinger-clan.de/prefs.js:164
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:25
 msgid "Notification Color RGB"
 msgstr "Bildirim Rengi (RGB)"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:144
-#: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:56
-msgid "Size of the app icons in the menu"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:164
+#: messagingmenu@lauinger-clan.de/prefs.js:195
 msgid "Usually located in '/usr/share/applications'"
-msgstr ""
+msgstr "Genellikle '/usr/share/applications' konumunda bulunur"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:167
+#: messagingmenu@lauinger-clan.de/prefs.js:198
 msgid "..."
-msgstr ""
+msgstr "..."
 
-#: messagingmenu@lauinger-clan.de/prefs.js:232
+#: messagingmenu@lauinger-clan.de/prefs.js:262
 msgid "Select app"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:268
-msgid "Select"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:271
-msgid "Cancel"
-msgstr ""
+msgstr "Uygulama seç"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:12
 msgid "Email Notification:"
-msgstr "Eposta Bildirimi:"
+msgstr "E-posta Bildirimi:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:23
+#: messagingmenu@lauinger-clan.de/prefs.ui:17
 msgid "Chat Notification:"
 msgstr "Sohbet Bildirimi:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:34
+#: messagingmenu@lauinger-clan.de/prefs.ui:22
 msgid "Micro Blogging Notification:"
-msgstr "Mikroblog Bildirimi:"
+msgstr "Mikro Blog Bildirimi:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:45
+#: messagingmenu@lauinger-clan.de/prefs.ui:27
 msgid "Notification Color (RGB):"
 msgstr "Bildirim Rengi (RGB):"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:56
+#: messagingmenu@lauinger-clan.de/prefs.ui:38
 msgid "Icon size (pixel):"
-msgstr ""
+msgstr "Simge boyutu (piksel):"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:54
+msgid "Add menu"
+msgstr "Menü ekle"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:58
+msgid "Type:"
+msgstr "Tür:"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:62
+#: messagingmenu@lauinger-clan.de/prefs.ui:94
+#: messagingmenu@lauinger-clan.de/prefs.ui:98
+msgid "Email"
+msgstr "E-posta"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:63
-msgid "Add menu"
-msgstr ""
+#: messagingmenu@lauinger-clan.de/prefs.ui:105
+#: messagingmenu@lauinger-clan.de/prefs.ui:109
+msgid "Chat"
+msgstr "Sohbet"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:67
-msgid "Type:"
-msgstr ""
+#: messagingmenu@lauinger-clan.de/prefs.ui:64
+#: messagingmenu@lauinger-clan.de/prefs.ui:116
+#: messagingmenu@lauinger-clan.de/prefs.ui:120
+msgid "Micro blogging"
+msgstr "Mikro blog"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:65
+#: messagingmenu@lauinger-clan.de/prefs.ui:131
+msgid "Email notifier"
+msgstr "E-posta bildirimi"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:66
+#: messagingmenu@lauinger-clan.de/prefs.ui:137
+msgid "Micro blogging notifier"
+msgstr "Mikro blog bildirimi"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:74
-#: messagingmenu@lauinger-clan.de/prefs.ui:112
-#: messagingmenu@lauinger-clan.de/prefs.ui:116
-msgid "Email"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.ui:75
-#: messagingmenu@lauinger-clan.de/prefs.ui:123
-#: messagingmenu@lauinger-clan.de/prefs.ui:127
-msgid "Chat"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.ui:76
-#: messagingmenu@lauinger-clan.de/prefs.ui:134
-#: messagingmenu@lauinger-clan.de/prefs.ui:138
-msgid "Micro blogging"
-msgstr "Mikroblog Bildirimi"
-
-#: messagingmenu@lauinger-clan.de/prefs.ui:77
-#: messagingmenu@lauinger-clan.de/prefs.ui:149
-msgid "Email notifier"
-msgstr "Bildirimi"
-
-#: messagingmenu@lauinger-clan.de/prefs.ui:78
-#: messagingmenu@lauinger-clan.de/prefs.ui:155
-msgid "Micro blogging notifier"
-msgstr "Mikroblog Bildirimi"
-
-#: messagingmenu@lauinger-clan.de/prefs.ui:86
 msgid "Name:"
-msgstr ""
+msgstr "Ad:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:101
+#: messagingmenu@lauinger-clan.de/prefs.ui:83
 msgid "Add"
-msgstr ""
+msgstr "Ekle"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:145
+#: messagingmenu@lauinger-clan.de/prefs.ui:127
 msgid "Notifier"
-msgstr "Eposta Bildirimi"
+msgstr "Bildirim"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:5
 msgid "Alert on new Email"
-msgstr ""
+msgstr "Yeni e-posta bildirimi"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:6
 msgid "Icon changes color on new Email"
-msgstr ""
+msgstr "Yeni e-postada simge rengi değişir"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:10
 msgid "Alert on new Chat"
-msgstr ""
+msgstr "Yeni sohbet bildirimi"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:11
 msgid "Icon changes color on new Chat"
-msgstr ""
+msgstr "Yeni sohbette simge rengi değişir"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:15
 msgid "Alert on new News"
-msgstr ""
+msgstr "Yeni haber bildirimi"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:16
 msgid "Icon changes color on new Blogposts"
-msgstr ""
+msgstr "Yeni blog gönderilerinde simge rengi değişir"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:20
 msgid "Notification Color HEX"
@@ -186,55 +181,72 @@ msgstr "Bildirim Rengi (Hex)"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:21
 msgid "The color used to paint the Icon(GNOME 41 and before)"
-msgstr ""
+msgstr "Simgeyi boyamak için kullanılan renk (GNOME 41 ve öncesi)"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:26
 msgid "The color used to paint the Icon(GNOME 42 and later)"
-msgstr ""
+msgstr "Simgeyi boyamak için kullanılan renk (GNOME 42 ve sonrası)"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:30
 msgid "Compatible Chats"
-msgstr ""
+msgstr "Uyumlu sohbetler"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:31
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:36
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:41
 msgid ""
-"case sensitive name of the .desktop file names to start the app (without ."
-"desktop ending) delimited by semicolon"
+"case sensitive name of the .desktop file names to start the app "
+"(without .desktop ending) delimited by semicolon"
 msgstr ""
+"uygulamayı başlatmak için .desktop dosya adlarının büyük/küçük harf duyarlı "
+"adı (sonunda .desktop olmadan) noktalı virgülle ayrılmış"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:35
 msgid "Compatible MBlogs"
-msgstr ""
+msgstr "Uyumlu mikro bloglar"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:40
 msgid "Compatible Emails"
-msgstr ""
+msgstr "Uyumlu e-postalar"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:45
 msgid "Compatible hidden Email Notifiers"
-msgstr ""
+msgstr "Uyumlu gizli e-posta bildirimleri"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:46
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:51
 msgid "Must be their Notificationtitle, because lookup_app does not work here"
-msgstr ""
+msgstr "Bildirim başlığı olmalı, çünkü lookup_app burada çalışmıyor"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:50
 msgid "Compatible hidden MBlog Notifiers"
-msgstr ""
+msgstr "Uyumlu gizli mikro blog bildirimleri"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:55
 msgid "Icon size"
-msgstr ""
+msgstr "Simge boyutu"
+
+#: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:56
+msgid "Size of the app icons in the menu"
+msgstr "Menüdeki uygulama simgelerinin boyutu"
 
 #~ msgid "Notification Color (Hex):"
 #~ msgstr "Bildirim Rengi (Hex):"
 
+#~ msgid "Select desktop file"
+#~ msgstr "Masaüstü dosyasını seç"
+
+#~ msgid "Select desktop file for "
+#~ msgstr "Masaüstü dosyasını seç "
+
 #~ msgid "Notification Color (RGB)"
 #~ msgstr "Bildirim Rengi (RGB)"
 
-#, fuzzy
+#~ msgid "Alert on new Messages from other Apps"
+#~ msgstr "Diğer uygulamalardan gelen yeni mesajlar için uyarı"
+
+#~ msgid "Icon blinks on new Messages"
+#~ msgstr "Yeni mesajlarda simge yanıp söner"
+
 #~ msgid "Micro blog"
-#~ msgstr "Mikroblog Bildirimi:"
+#~ msgstr "Mikro blog"

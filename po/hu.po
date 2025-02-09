@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-09 10:18+0100\n"
+"POT-Creation-Date: 2025-02-09 13:54+0100\n"
 "PO-Revision-Date: 2024-03-09 10:21+0100\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Hungarian\n"
@@ -32,153 +32,148 @@ msgstr "Kapcsolatok"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:24
-#: messagingmenu@lauinger-clan.de/prefs.ui:64
-#: messagingmenu@lauinger-clan.de/prefs.ui:117
-#: messagingmenu@lauinger-clan.de/prefs.ui:128
-#: messagingmenu@lauinger-clan.de/prefs.ui:139
+#: messagingmenu@lauinger-clan.de/prefs.js:35
+msgid "Select"
+msgstr "Kiválasztás"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:38
+msgid "Cancel"
+msgstr "Mégse"
+
+#: messagingmenu@lauinger-clan.de/prefs.js:77
+#: messagingmenu@lauinger-clan.de/prefs.ui:55
+#: messagingmenu@lauinger-clan.de/prefs.ui:99
+#: messagingmenu@lauinger-clan.de/prefs.ui:110
+#: messagingmenu@lauinger-clan.de/prefs.ui:121
 msgid "Name of .desktop files without .desktop ending"
-msgstr ""
+msgstr ".desktop fájlok neve .desktop végződés nélkül"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:27
-#: messagingmenu@lauinger-clan.de/prefs.ui:150
-#: messagingmenu@lauinger-clan.de/prefs.ui:156
+#: messagingmenu@lauinger-clan.de/prefs.js:80
+#: messagingmenu@lauinger-clan.de/prefs.ui:132
+#: messagingmenu@lauinger-clan.de/prefs.ui:138
 msgid "Notifier title"
-msgstr "Értesítési"
+msgstr "Értesítési cím"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:103
+#: messagingmenu@lauinger-clan.de/prefs.js:138
 msgid "Toggle email notification"
-msgstr "Email értesítés"
+msgstr "Email értesítés be-/kikapcsolása"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:111
+#: messagingmenu@lauinger-clan.de/prefs.js:146
 msgid "Toggle chat notification"
-msgstr "Chat értesítés"
+msgstr "Chat értesítés be-/kikapcsolása"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:122
+#: messagingmenu@lauinger-clan.de/prefs.js:155
 msgid "Toggle micro blogging notification"
-msgstr "Mikro-blogging értesítés"
+msgstr "Mikro-blogging értesítés be-/kikapcsolása"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:131
+#: messagingmenu@lauinger-clan.de/prefs.js:164
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:25
 msgid "Notification Color RGB"
 msgstr "Értesítési szín (RGB)"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:144
-#: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:56
-msgid "Size of the app icons in the menu"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:164
+#: messagingmenu@lauinger-clan.de/prefs.js:195
 msgid "Usually located in '/usr/share/applications'"
-msgstr ""
+msgstr "Általában a '/usr/share/applications' helyen található"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:167
+#: messagingmenu@lauinger-clan.de/prefs.js:198
 msgid "..."
-msgstr ""
+msgstr "..."
 
-#: messagingmenu@lauinger-clan.de/prefs.js:232
+#: messagingmenu@lauinger-clan.de/prefs.js:262
 msgid "Select app"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:268
-msgid "Select"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.js:271
-msgid "Cancel"
-msgstr ""
+msgstr "Alkalmazás kiválasztása"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:12
 msgid "Email Notification:"
 msgstr "Email értesítés:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:23
+#: messagingmenu@lauinger-clan.de/prefs.ui:17
 msgid "Chat Notification:"
 msgstr "Chat értesítés:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:34
+#: messagingmenu@lauinger-clan.de/prefs.ui:22
 msgid "Micro Blogging Notification:"
 msgstr "Mikro-blogging értesítés:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:45
+#: messagingmenu@lauinger-clan.de/prefs.ui:27
 msgid "Notification Color (RGB):"
 msgstr "Értesítési szín (RGB):"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:56
+#: messagingmenu@lauinger-clan.de/prefs.ui:38
 msgid "Icon size (pixel):"
-msgstr ""
+msgstr "Ikon mérete (pixel):"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:54
+msgid "Add menu"
+msgstr "Menü hozzáadása"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:58
+msgid "Type:"
+msgstr "Típus:"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:62
+#: messagingmenu@lauinger-clan.de/prefs.ui:94
+#: messagingmenu@lauinger-clan.de/prefs.ui:98
+msgid "Email"
+msgstr "Email"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:63
-msgid "Add menu"
-msgstr ""
+#: messagingmenu@lauinger-clan.de/prefs.ui:105
+#: messagingmenu@lauinger-clan.de/prefs.ui:109
+msgid "Chat"
+msgstr "Chat"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:67
-msgid "Type:"
-msgstr ""
+#: messagingmenu@lauinger-clan.de/prefs.ui:64
+#: messagingmenu@lauinger-clan.de/prefs.ui:116
+#: messagingmenu@lauinger-clan.de/prefs.ui:120
+msgid "Micro blogging"
+msgstr "Mikro-blogging"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:65
+#: messagingmenu@lauinger-clan.de/prefs.ui:131
+msgid "Email notifier"
+msgstr "Email értesítő"
+
+#: messagingmenu@lauinger-clan.de/prefs.ui:66
+#: messagingmenu@lauinger-clan.de/prefs.ui:137
+msgid "Micro blogging notifier"
+msgstr "Mikro-blogging értesítő"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:74
-#: messagingmenu@lauinger-clan.de/prefs.ui:112
-#: messagingmenu@lauinger-clan.de/prefs.ui:116
-msgid "Email"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.ui:75
-#: messagingmenu@lauinger-clan.de/prefs.ui:123
-#: messagingmenu@lauinger-clan.de/prefs.ui:127
-msgid "Chat"
-msgstr ""
-
-#: messagingmenu@lauinger-clan.de/prefs.ui:76
-#: messagingmenu@lauinger-clan.de/prefs.ui:134
-#: messagingmenu@lauinger-clan.de/prefs.ui:138
-msgid "Micro blogging"
-msgstr "Mikro-blogging értesítés"
-
-#: messagingmenu@lauinger-clan.de/prefs.ui:77
-#: messagingmenu@lauinger-clan.de/prefs.ui:149
-msgid "Email notifier"
-msgstr "Email értesítés"
-
-#: messagingmenu@lauinger-clan.de/prefs.ui:78
-#: messagingmenu@lauinger-clan.de/prefs.ui:155
-msgid "Micro blogging notifier"
-msgstr "Mikro-blogging értesítés"
-
-#: messagingmenu@lauinger-clan.de/prefs.ui:86
 msgid "Name:"
-msgstr ""
+msgstr "Név:"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:101
+#: messagingmenu@lauinger-clan.de/prefs.ui:83
 msgid "Add"
-msgstr ""
+msgstr "Hozzáadás"
 
-#: messagingmenu@lauinger-clan.de/prefs.ui:145
+#: messagingmenu@lauinger-clan.de/prefs.ui:127
 msgid "Notifier"
-msgstr "Email értesítés"
+msgstr "Értesítő"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:5
 msgid "Alert on new Email"
-msgstr ""
+msgstr "Értesítés új emailről"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:6
 msgid "Icon changes color on new Email"
-msgstr ""
+msgstr "Az ikon színe megváltozik új email esetén"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:10
 msgid "Alert on new Chat"
-msgstr ""
+msgstr "Értesítés új chatről"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:11
 msgid "Icon changes color on new Chat"
-msgstr ""
+msgstr "Az ikon színe megváltozik új chat esetén"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:15
 msgid "Alert on new News"
-msgstr ""
+msgstr "Értesítés új hírekről"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:16
 msgid "Icon changes color on new Blogposts"
-msgstr ""
+msgstr "Az ikon színe megváltozik új blogbejegyzések esetén"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:20
 msgid "Notification Color HEX"
@@ -186,48 +181,55 @@ msgstr "Értesítési szín (Hex)"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:21
 msgid "The color used to paint the Icon(GNOME 41 and before)"
-msgstr ""
+msgstr "Az ikon festéséhez használt szín (GNOME 41 és korábbi)"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:26
 msgid "The color used to paint the Icon(GNOME 42 and later)"
-msgstr ""
+msgstr "Az ikon festéséhez használt szín (GNOME 42 és későbbi)"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:30
 msgid "Compatible Chats"
-msgstr ""
+msgstr "Kompatibilis chatek"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:31
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:36
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:41
 msgid ""
-"case sensitive name of the .desktop file names to start the app (without ."
-"desktop ending) delimited by semicolon"
+"case sensitive name of the .desktop file names to start the app "
+"(without .desktop ending) delimited by semicolon"
 msgstr ""
+"az alkalmazás indításához szükséges .desktop fájlnevek kis- és "
+"nagybetűérzékeny neve (a .desktop végződés nélkül), pontosvesszővel "
+"elválasztva"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:35
 msgid "Compatible MBlogs"
-msgstr ""
+msgstr "Kompatibilis mikroblogok"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:40
 msgid "Compatible Emails"
-msgstr ""
+msgstr "Kompatibilis emailek"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:45
 msgid "Compatible hidden Email Notifiers"
-msgstr ""
+msgstr "Kompatibilis rejtett email értesítők"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:46
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:51
 msgid "Must be their Notificationtitle, because lookup_app does not work here"
-msgstr ""
+msgstr "Az értesítési címüknek kell lennie, mert a lookup_app itt nem működik"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:50
 msgid "Compatible hidden MBlog Notifiers"
-msgstr ""
+msgstr "Kompatibilis rejtett mikroblog értesítők"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:55
 msgid "Icon size"
-msgstr ""
+msgstr "Ikon mérete"
+
+#: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:56
+msgid "Size of the app icons in the menu"
+msgstr "Az alkalmazásikonok mérete a menüben"
 
 #~ msgid "Notification Color (Hex):"
 #~ msgstr "Értesítési szín (Hex):"

@@ -1,4 +1,4 @@
-# German translations for PACKAGE package.
+# Brazilian Portuguese translations for PACKAGE package.
 # Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Andreas Wilhelm <screenfreeze.net@gmail.com>, 2013.
@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-09 10:18+0100\n"
-"PO-Revision-Date: 2022-11-11 15:31+0100\n"
+"PO-Revision-Date: 2025-02-09 14:04+0100\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Brazilian Portuguese\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: messagingmenu@lauinger-clan.de/extension.js:89
 msgid "Compose New Message"
@@ -30,7 +30,7 @@ msgstr "Contatos"
 #: messagingmenu@lauinger-clan.de/prefs.ui:5
 #: messagingmenu@lauinger-clan.de/prefs.ui:9
 msgid "Settings"
-msgstr "Definicoes"
+msgstr "Configurações"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:24
 #: messagingmenu@lauinger-clan.de/prefs.ui:64
@@ -38,163 +38,163 @@ msgstr "Definicoes"
 #: messagingmenu@lauinger-clan.de/prefs.ui:128
 #: messagingmenu@lauinger-clan.de/prefs.ui:139
 msgid "Name of .desktop files without .desktop ending"
-msgstr ""
+msgstr "Nome dos arquivos .desktop sem a terminação .desktop"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:27
 #: messagingmenu@lauinger-clan.de/prefs.ui:150
 #: messagingmenu@lauinger-clan.de/prefs.ui:156
 msgid "Notifier title"
-msgstr ""
+msgstr "Título do Notificador"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:103
 msgid "Toggle email notification"
-msgstr ""
+msgstr "Alternar notificação de e-mail"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:111
 msgid "Toggle chat notification"
-msgstr ""
+msgstr "Alternar notificação de chat"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:122
 msgid "Toggle micro blogging notification"
-msgstr ""
+msgstr "Alternar notificação de microblogging"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:131
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:25
 msgid "Notification Color RGB"
-msgstr ""
+msgstr "Cor da Notificação (RGB)"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:144
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:56
 msgid "Size of the app icons in the menu"
-msgstr ""
+msgstr "Tamanho dos ícones dos aplicativos no menu"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:164
 msgid "Usually located in '/usr/share/applications'"
-msgstr ""
+msgstr "Normalmente localizado em '/usr/share/applications'"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:167
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: messagingmenu@lauinger-clan.de/prefs.js:232
 msgid "Select app"
-msgstr ""
+msgstr "Selecionar aplicativo"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:268
 msgid "Select"
-msgstr ""
+msgstr "Selecionar"
 
 #: messagingmenu@lauinger-clan.de/prefs.js:271
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:12
 msgid "Email Notification:"
-msgstr ""
+msgstr "Notificação de E-mail:"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:23
 msgid "Chat Notification:"
-msgstr ""
+msgstr "Notificação de Chat:"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:34
 msgid "Micro Blogging Notification:"
-msgstr ""
+msgstr "Notificação de Microblogging:"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:45
 msgid "Notification Color (RGB):"
-msgstr ""
+msgstr "Cor da Notificação (RGB):"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:56
 msgid "Icon size (pixel):"
-msgstr ""
+msgstr "Tamanho do ícone (pixels):"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:63
 msgid "Add menu"
-msgstr ""
+msgstr "Adicionar menu"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:67
 msgid "Type:"
-msgstr ""
+msgstr "Tipo:"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:74
 #: messagingmenu@lauinger-clan.de/prefs.ui:112
 #: messagingmenu@lauinger-clan.de/prefs.ui:116
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:75
 #: messagingmenu@lauinger-clan.de/prefs.ui:123
 #: messagingmenu@lauinger-clan.de/prefs.ui:127
 msgid "Chat"
-msgstr ""
+msgstr "Chat"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:76
 #: messagingmenu@lauinger-clan.de/prefs.ui:134
 #: messagingmenu@lauinger-clan.de/prefs.ui:138
 msgid "Micro blogging"
-msgstr ""
+msgstr "Microblogging"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:77
 #: messagingmenu@lauinger-clan.de/prefs.ui:149
 msgid "Email notifier"
-msgstr ""
+msgstr "Notificador de E-mail"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:78
 #: messagingmenu@lauinger-clan.de/prefs.ui:155
 msgid "Micro blogging notifier"
-msgstr ""
+msgstr "Notificador de Microblogging"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:86
 msgid "Name:"
-msgstr ""
+msgstr "Nome:"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:101
 msgid "Add"
-msgstr ""
+msgstr "Adicionar"
 
 #: messagingmenu@lauinger-clan.de/prefs.ui:145
 msgid "Notifier"
-msgstr ""
+msgstr "Notificador"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:5
 msgid "Alert on new Email"
-msgstr ""
+msgstr "Alerta de novo e-mail"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:6
 msgid "Icon changes color on new Email"
-msgstr ""
+msgstr "O ícone muda de cor com novo e-mail"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:10
 msgid "Alert on new Chat"
-msgstr ""
+msgstr "Alerta de novo chat"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:11
 msgid "Icon changes color on new Chat"
-msgstr ""
+msgstr "O ícone muda de cor com novo chat"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:15
 msgid "Alert on new News"
-msgstr ""
+msgstr "Alerta de novas notícias"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:16
 msgid "Icon changes color on new Blogposts"
-msgstr ""
+msgstr "O ícone muda de cor com novas postagens no blog"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:20
 msgid "Notification Color HEX"
-msgstr ""
+msgstr "Cor da Notificação (Hex)"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:21
 msgid "The color used to paint the Icon(GNOME 41 and before)"
-msgstr ""
+msgstr "A cor usada para pintar o ícone (GNOME 41 e anteriores)"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:26
 msgid "The color used to paint the Icon(GNOME 42 and later)"
-msgstr ""
+msgstr "A cor usada para pintar o ícone (GNOME 42 e posteriores)"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:30
 msgid "Compatible Chats"
-msgstr ""
+msgstr "Chats compatíveis"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:31
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:36
@@ -203,28 +203,50 @@ msgid ""
 "case sensitive name of the .desktop file names to start the app (without ."
 "desktop ending) delimited by semicolon"
 msgstr ""
+"nome sensível a maiúsculas e minúsculas dos nomes dos arquivos .desktop para iniciar o aplicativo (sem a terminação .desktop) delimitado por ponto e vírgula"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:35
 msgid "Compatible MBlogs"
-msgstr ""
+msgstr "Microblogs compatíveis"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:40
 msgid "Compatible Emails"
-msgstr ""
+msgstr "E-mails compatíveis"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:45
 msgid "Compatible hidden Email Notifiers"
-msgstr ""
+msgstr "Notificadores de e-mail ocultos compatíveis"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:46
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:51
 msgid "Must be their Notificationtitle, because lookup_app does not work here"
-msgstr ""
+msgstr "Deve ser o título da notificação, porque lookup_app não funciona aqui"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:50
 msgid "Compatible hidden MBlog Notifiers"
-msgstr ""
+msgstr "Notificadores de microblog ocultos compatíveis"
 
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:55
 msgid "Icon size"
-msgstr ""
+msgstr "Tamanho do ícone"
+
+#~ msgid "Notification Color (Hex):"
+#~ msgstr "Cor da Notificação (Hex):"
+
+#~ msgid "Select desktop file"
+#~ msgstr "Selecionar arquivo desktop"
+
+#~ msgid "Select desktop file for "
+#~ msgstr "Selecionar arquivo desktop para "
+
+#~ msgid "Notification Color (RGB)"
+#~ msgstr "Cor da Notificação (RGB)"
+
+#~ msgid "Alert on new Messages from other Apps"
+#~ msgstr "Alerta de novas mensagens de outros aplicativos"
+
+#~ msgid "Icon blinks on new Messages"
+#~ msgstr "O ícone pisca com novas mensagens"
+
+#~ msgid "Micro blog"
+#~ msgstr "Microblog"
