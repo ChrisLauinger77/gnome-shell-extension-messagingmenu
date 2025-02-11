@@ -88,23 +88,23 @@ export default class AdwPrefs extends ExtensionPreferences {
         let strsettings;
         let strgroup;
         switch (cmb_add.get_selected()) {
-            case 1:
+            case 0:
                 strsettings = "compatible-emails";
                 strgroup = "messagingmenu_group_email";
                 break;
-            case 2:
+            case 1:
                 strsettings = "compatible-chats";
                 strgroup = "messagingmenu_group_chat";
                 break;
-            case 3:
+            case 2:
                 strsettings = "compatible-mblogs";
                 strgroup = "messagingmenu_group_mblog";
                 break;
-            case 4:
+            case 3:
                 strsettings = "compatible-hidden-email-notifiers";
                 strgroup = "messagingmenu_group_emailnotifiers";
                 break;
-            case 5:
+            case 4:
                 strsettings = "compatible-hidden-mblog-notifiers";
                 strgroup = "messagingmenu_group_mblognotifiers";
                 break;
@@ -119,8 +119,8 @@ export default class AdwPrefs extends ExtensionPreferences {
                 strsettings,
                 valuesettings + ";" + entry_add.text
             );
-            let group = builder.get_object(strgroup);
-            let adwrow = new Adw.ActionRow({ title: entry_add.text });
+            const group = builder.get_object(strgroup);
+            const adwrow = new Adw.ActionRow({ title: entry_add.text });
             group.add(adwrow);
             entry_add.text = "";
         }
@@ -134,7 +134,7 @@ export default class AdwPrefs extends ExtensionPreferences {
     }
 
     _page1(builder, settings, myAppChooser) {
-        let email_setting_switch = builder.get_object("messagingmenu_row1");
+        const email_setting_switch = builder.get_object("messagingmenu_row1");
         email_setting_switch.set_tooltip_text(_("Toggle email notification"));
         settings.bind(
             "notify-email",
@@ -142,7 +142,7 @@ export default class AdwPrefs extends ExtensionPreferences {
             "active",
             Gio.SettingsBindFlags.DEFAULT
         );
-        let chat_setting_switch = builder.get_object("messagingmenu_row2");
+        const chat_setting_switch = builder.get_object("messagingmenu_row2");
         chat_setting_switch.set_tooltip_text(_("Toggle chat notification"));
         settings.bind(
             "notify-chat",
@@ -150,7 +150,8 @@ export default class AdwPrefs extends ExtensionPreferences {
             "active",
             Gio.SettingsBindFlags.DEFAULT
         );
-        let mblogging_setting_switch = builder.get_object("messagingmenu_row3");
+        const mblogging_setting_switch =
+            builder.get_object("messagingmenu_row3");
         mblogging_setting_switch.set_tooltip_text(
             _("Toggle micro blogging notification")
         );
@@ -160,16 +161,16 @@ export default class AdwPrefs extends ExtensionPreferences {
             "active",
             Gio.SettingsBindFlags.DEFAULT
         );
-        let color_setting_button = builder.get_object("color_setting_button");
+        const color_setting_button = builder.get_object("color_setting_button");
         color_setting_button.set_tooltip_text(_("Notification Color RGB"));
-        let mycolor = new Gdk.RGBA();
+        const mycolor = new Gdk.RGBA();
         mycolor.parse(this.getSettings().get_string("color-rgba"));
         color_setting_button.set_rgba(mycolor);
         color_setting_button.connect(
             "color-set",
             this._onColorChanged.bind(this, color_setting_button)
         );
-        let row5 = builder.get_object("messagingmenu_row5");
+        const row5 = builder.get_object("messagingmenu_row5");
         settings.bind(
             "icon-size",
             row5,
@@ -177,16 +178,16 @@ export default class AdwPrefs extends ExtensionPreferences {
             Gio.SettingsBindFlags.DEFAULT
         );
 
-        let group_add = builder.get_object("messagingmenu_group_add");
-        let cmb_add = builder.get_object("messagingmenu_cmb_add");
+        const group_add = builder.get_object("messagingmenu_group_add");
+        const cmb_add = builder.get_object("messagingmenu_cmb_add");
         cmb_add.set_selected(0);
         cmb_add.connect(
             "notify",
             this._addMenuChangeDesc.bind(this, cmb_add, group_add)
         );
-        let button_add = builder.get_object("button_add_menu_add");
+        const button_add = builder.get_object("button_add_menu_add");
         button_add.set_css_classes(["suggested-action"]);
-        let entry_add = builder.get_object("messagingmenu_row_add2");
+        const entry_add = builder.get_object("messagingmenu_row_add2");
         button_add.connect(
             "clicked",
             this._addMenu.bind(this, cmb_add, entry_add, builder)
@@ -194,7 +195,7 @@ export default class AdwPrefs extends ExtensionPreferences {
         entry_add.set_tooltip_text(
             _("Usually located in '/usr/share/applications'")
         );
-        let buttonfilechooser = new Gtk.Button({
+        const buttonfilechooser = new Gtk.Button({
             label: _("..."),
             valign: Gtk.Align.CENTER,
         });

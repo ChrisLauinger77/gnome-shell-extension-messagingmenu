@@ -72,13 +72,13 @@ const MessageMenu = GObject.registerClass(
                 .split(";")
                 .sort(Intl.Collator().compare);
 
-            let hbox = new St.BoxLayout({
+            const hbox = new St.BoxLayout({
                 style_class: "panel-status-menu-box",
             });
-            let gicon = Gio.icon_new_for_string(
+            const gicon = Gio.icon_new_for_string(
                 Me.path + "/icons/mymail-symbolic.svg"
             );
-            let icon = new St.Icon({
+            const icon = new St.Icon({
                 gicon,
                 style_class: "system-status-icon",
             });
@@ -101,7 +101,7 @@ const MessageMenu = GObject.registerClass(
             this._evolution = null;
             this._geary = null;
 
-            let appsys = Shell.AppSystem.get_default();
+            const appsys = Shell.AppSystem.get_default();
             this._getAppsEMAIL(appsys);
             this._getAppsCHAT(appsys);
             this._getAppsBLOG(appsys);
@@ -139,7 +139,7 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuEVOLUTION() {
-            let newLauncher = new MessageMenuItem(
+            const newLauncher = new MessageMenuItem(
                 this._evolution,
                 this._intIcon_size
             );
@@ -162,7 +162,7 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuTHUNDERBIRD() {
-            let newLauncher = new MessageMenuItem(
+            const newLauncher = new MessageMenuItem(
                 this._thunderbird,
                 this._intIcon_size
             );
@@ -186,7 +186,7 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuICEDOVE() {
-            let newLauncher = new MessageMenuItem(
+            const newLauncher = new MessageMenuItem(
                 this._icedove,
                 this._intIcon_size
             );
@@ -217,7 +217,7 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuKMAIL() {
-            let newLauncher = new MessageMenuItem(
+            const newLauncher = new MessageMenuItem(
                 this._kmail,
                 this._intIcon_size
             );
@@ -235,7 +235,7 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuCLAWS() {
-            let newLauncher = new MessageMenuItem(
+            const newLauncher = new MessageMenuItem(
                 this._claws,
                 this._intIcon_size
             );
@@ -253,7 +253,7 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuGEARY() {
-            let newLauncher = new MessageMenuItem(
+            const newLauncher = new MessageMenuItem(
                 this._geary,
                 this._intIcon_size
             );
@@ -535,15 +535,40 @@ export default class MessagingMenu extends Extension {
         this.openPreferences();
     }
 
+    onParamChanged() {
+        this.disable();
+        this.enable();
+    }
+
     enable() {
         this._settings = this.getSettings();
         let icon_size = this._settings.get_int("icon-size");
         this._indicator = new MessageMenu(this, icon_size);
 
-        this._queuechanged_handler = Main.messageTray.connect(
-            "queue-changed",
-            this._queuechanged.bind(this)
+        // add Signals to array
+        this._SignalsArray = [];
+        this._SignalsArray.push(
+            Main.messageTray.connect(
+                "queue-changed",
+                this._queuechanged.bind(this)
+            )
         );
+
+        const settingsToMonitor = [
+            { key: "compatible-chats", callback: "onParamChanged" },
+            { key: "compatible-mblogs", callback: "onParamChanged" },
+            { key: "compatible-emails", callback: "onParamChanged" },
+            { key: "icon-size", callback: "onParamChanged" },
+        ];
+
+        settingsToMonitor.forEach((setting) => {
+            this._SignalsArray.push(
+                this._settings.connect(
+                    `changed::${setting.key}`,
+                    this[setting.callback].bind(this)
+                )
+            );
+        });
 
         const statusArea = Main.panel.statusArea;
 
@@ -555,7 +580,11 @@ export default class MessagingMenu extends Extension {
     }
 
     disable() {
-        Main.messageTray.disconnect(this._queuechanged_handler);
+        // remove setting Signals
+        this._SignalsArray.forEach(function (signal) {
+            this._settings.disconnect(signal);
+        }, this);
+        this._SignalsArray = null;
         this._indicator.destroy();
         this._indicator = null;
         this._settings = null;
