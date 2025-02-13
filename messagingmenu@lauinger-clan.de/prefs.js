@@ -254,6 +254,7 @@ export default class AdwPrefs extends ExtensionPreferences {
     }
 
     fillPreferencesWindow(window) {
+        window.search_enabled = true;
         window.set_default_size(675, 700);
         const builder = Gtk.Builder.new();
         builder.add_from_file(this.path + "/prefs.ui");
