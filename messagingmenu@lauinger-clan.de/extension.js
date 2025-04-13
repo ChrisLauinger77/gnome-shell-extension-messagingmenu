@@ -63,11 +63,11 @@ const MessageMenu = GObject.registerClass(
                 .get_string("compatible-emails")
                 .split(";")
                 .sort(Intl.Collator().compare);
-            this._compatible_hidden_Email_Notifiers = this._settings
+            this._compatibleHiddenEmailNotifiers = this._settings
                 .get_string("compatible-hidden-email-notifiers")
                 .split(";")
                 .sort(Intl.Collator().compare);
-            this._compatible_hidden_MBlog_Notifiers = this._settings
+            this._compatibleHiddenMBlogNotifiers = this._settings
                 .get_string("compatible-hidden-mblog-notifiers")
                 .split(";")
                 .sort(Intl.Collator().compare);
@@ -130,12 +130,12 @@ const MessageMenu = GObject.registerClass(
             return this._availableNotifiers;
         }
 
-        get Compatible_hidden_Email_Notifiers() {
-            return this._compatible_hidden_Email_Notifiers;
+        get compatibleHiddenEmailNotifiers() {
+            return this._compatibleHiddenEmailNotifiers;
         }
 
-        get Compatible_hidden_MBlog_Notifiers() {
-            return this._compatible_hidden_MBlog_Notifiers;
+        get compatibleHiddenMBlogNotifiers() {
+            return this._compatibleHiddenMBlogNotifiers;
         }
 
         _buildMenuEVOLUTION() {
@@ -425,15 +425,30 @@ export default class MessagingMenu extends Extension {
             ) {
                 newMessage = true;
             } else if (source.app) {
-                newMessage = this._checkNotifyEmailByID(source);
-            } else {
-                newMessage = this._checkNotifyEmailByName(source);
-
                 if (this._settings.get_boolean("notify-email")) {
-                    newMessage = this._checkNotifyHiddenEmail(source);
+                    newMessage =
+                        this._checkNotifyEmailByID(source) ||
+                        this._checkHiddenNotifierMatch(
+                            source,
+                            this._indicator.compatibleHiddenEmailNotifiers
+                        );
+                }
+            } else {
+                if (this._settings.get_boolean("notify-email")) {
+                    newMessage =
+                        this._checkNotifyEmailByName(source) ||
+                        this._checkHiddenNotifierMatch(
+                            source,
+                            this._indicator.compatibleHiddenEmailNotifiers
+                        );
                 }
                 if (this._settings.get_boolean("notify-mblogging")) {
-                    newMessage = this._checkNotifyMBlog(source);
+                    newMessage =
+                        newMessage ||
+                        this._checkHiddenNotifierMatch(
+                            source,
+                            this._indicator.compatibleHiddenMBlogNotifiers
+                        );
                 }
             }
         }
@@ -443,12 +458,16 @@ export default class MessagingMenu extends Extension {
     _checkNotifyEmailByID(source) {
         // check for Message from known Email App
         let result = false;
-        for (let a_Notifier of this._indicator.AvailableNotifiers) {
-            let app_id = a_Notifier.get_id(); //e.g. thunderbird.desktop
-            if (
-                app_id.toLowerCase().includes(source.app.get_id().toLowerCase())
-            ) {
-                result = true;
+        if (source.app) {
+            for (let notifier of this._indicator.AvailableNotifiers) {
+                let app_id = notifier.get_id(); //e.g. thunderbird.desktop
+                if (
+                    app_id
+                        .toLowerCase()
+                        .includes(source.app.get_id().toLowerCase())
+                ) {
+                    result = true;
+                }
             }
         }
         return result;
@@ -456,34 +475,28 @@ export default class MessagingMenu extends Extension {
 
     _checkNotifyEmailByName(source) {
         let result = false;
-        for (let a_Notifier of this._indicator.AvailableNotifiers) {
-            let app_name = a_Notifier.get_name(); //e.g. Thunderbird Mail
-            if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
-                result = true;
+        if (source.title) {
+            for (let notifier of this._indicator.AvailableNotifiers) {
+                let app_name = notifier.get_name(); //e.g. Thunderbird Mail
+                if (
+                    app_name.toLowerCase().includes(source.title.toLowerCase())
+                ) {
+                    result = true;
+                }
             }
         }
         return result;
     }
 
-    _checkNotifyHiddenEmail(source) {
+    _checkHiddenNotifierMatch(source, notifiers) {
         let result = false;
-        for (let a_Notifier of this._indicator
-            .Compatible_hidden_Email_Notifiers) {
-            let app_name = a_Notifier; //e.g. Mailnag
-            if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
-                result = true;
-            }
-        }
-        return result;
-    }
-
-    _checkNotifyMBlog(source) {
-        let result = false;
-        for (let a_Notifier of this._indicator
-            .Compatible_hidden_MBlog_Notifiers) {
-            let app_name = a_Notifier; //e.g. friends
-            if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
-                result = true;
+        if (source.title) {
+            for (let notifier of notifiers) {
+                if (
+                    notifier.toLowerCase().includes(source.title.toLowerCase())
+                ) {
+                    result = true;
+                }
             }
         }
         return result;
