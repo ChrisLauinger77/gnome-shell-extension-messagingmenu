@@ -145,15 +145,20 @@ const MessageMenu = GObject.registerClass(
             );
             this.menu.addMenuItem(newLauncher);
 
-            this.comp = new PopupMenu.PopupMenuItem(
+            this.comp = new PopupMenu.PopupImageMenuItem(
                 this.new_msg_string + "...",
+                "mail-message-new-symbolic",
                 {
                     style_class: "special-action",
                 }
             );
-            this.con = new PopupMenu.PopupMenuItem(this.contacts_string, {
-                style_class: "special-action",
-            });
+            this.con = new PopupMenu.PopupImageMenuItem(
+                this.contacts_string,
+                "contact-new-symbolic",
+                {
+                    style_class: "special-action",
+                }
+            );
 
             this.con.connect("activate", this._evolutionContacts.bind(this));
             this.comp.connect("activate", this._evolutionCompose.bind(this));
@@ -168,15 +173,20 @@ const MessageMenu = GObject.registerClass(
             );
             this.menu.addMenuItem(newLauncher);
 
-            this.comp_tb = new PopupMenu.PopupMenuItem(
+            this.comp_tb = new PopupMenu.PopupImageMenuItem(
                 this.new_msg_string + "...",
+                "mail-message-new-symbolic",
                 {
                     style_class: "special-action",
                 }
             );
-            this.con_tb = new PopupMenu.PopupMenuItem(this.contacts_string, {
-                style_class: "special-action",
-            });
+            this.con_tb = new PopupMenu.PopupImageMenuItem(
+                this.contacts_string,
+                "contact-new-symbolic",
+                {
+                    style_class: "special-action",
+                }
+            );
 
             this.comp_tb.connect("activate", this._TbCompose.bind(this));
             this.menu.addMenuItem(this.comp_tb);
@@ -192,12 +202,14 @@ const MessageMenu = GObject.registerClass(
             );
             this.menu.addMenuItem(newLauncher);
 
-            this.comp_icedove = new PopupMenu.PopupMenuItem(
+            this.comp_icedove = new PopupMenu.PopupImageMenuItem(
                 this.new_msg_string + "...",
+                "mail-message-new-symbolic",
                 { style_class: "special-action" }
             );
-            this.con_icedove = new PopupMenu.PopupMenuItem(
+            this.con_icedove = new PopupMenu.PopupImageMenuItem(
                 this.contacts_string,
+                "contact-new-symbolic",
                 {
                     style_class: "special-action",
                 }
@@ -223,8 +235,9 @@ const MessageMenu = GObject.registerClass(
             );
             this.menu.addMenuItem(newLauncher);
 
-            this.comp = new PopupMenu.PopupMenuItem(
+            this.comp = new PopupMenu.PopupImageMenuItem(
                 this.new_msg_string + "...",
+                "mail-message-new-symbolic",
                 {
                     style_class: "special-action",
                 }
@@ -241,8 +254,9 @@ const MessageMenu = GObject.registerClass(
             );
             this.menu.addMenuItem(newLauncher);
 
-            this.comp = new PopupMenu.PopupMenuItem(
+            this.comp = new PopupMenu.PopupImageMenuItem(
                 this.new_msg_string + "...",
+                "mail-message-new-symbolic",
                 {
                     style_class: "special-action",
                 }
@@ -259,8 +273,9 @@ const MessageMenu = GObject.registerClass(
             );
             this.menu.addMenuItem(newLauncher);
 
-            this.comp = new PopupMenu.PopupMenuItem(
+            this.comp = new PopupMenu.PopupImageMenuItem(
                 this.new_msg_string + "...",
+                "mail-message-new-symbolic",
                 {
                     style_class: "special-action",
                 }
