@@ -209,10 +209,24 @@ export default class AdwPrefs extends ExtensionPreferences {
         });
     }
 
+    _addAppIcon(adwrow, appname) {
+        const apps = Gio.AppInfo.get_all();
+
+        for (const app of apps) {
+            if (appname.includes(app.get_name())) {
+                adwrow.subtitle = app.get_id();
+                const icon = new Gtk.Image({ gicon: app.get_icon() });
+                adwrow.add_prefix(icon);
+                return;
+            }
+        }
+    }
+
     _fillgroup(group, applist) {
         for (let app of applist) {
             let adwrow = new Adw.ActionRow({ title: app });
             group.add(adwrow);
+            this._addAppIcon(adwrow, app);
         }
     }
 
