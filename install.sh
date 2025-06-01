@@ -3,7 +3,7 @@
 # glib-compile-schemas messagingmenu\@lauinger-clan.de/schemas/
 
 cd messagingmenu\@lauinger-clan.de
-gnome-extensions pack --podir=../po/ --out-dir=../ --extra-source=prefs.ui --extra-source=\icons --extra-source=../LICENSE
+gnome-extensions pack --podir=../po/ --out-dir=../ --extra-source=\ui --extra-source=\icons --extra-source=../LICENSE
 cd ..
 mv messagingmenu@lauinger-clan.de.shell-extension.zip messagingmenu@lauinger-clan.de.zip
 
