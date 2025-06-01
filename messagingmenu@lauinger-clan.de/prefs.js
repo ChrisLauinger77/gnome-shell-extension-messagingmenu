@@ -214,7 +214,7 @@ export default class AdwPrefs extends ExtensionPreferences {
 
         for (const app of apps) {
             if (appname.includes(app.get_name())) {
-                adwrow.subtitle = app.get_id();
+                adwrow.subtitle = app.get_description();
                 const icon = new Gtk.Image({ gicon: app.get_icon() });
                 adwrow.add_prefix(icon);
                 return;
