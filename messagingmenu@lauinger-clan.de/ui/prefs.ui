@@ -79,6 +79,12 @@
             <property name="title" translatable="yes"></property>
             <property name="activatable-widget">button_add_menu_add</property>
             <child>
+              <object class="GtkButton" id="button_add_menu_scan">
+                <property name="label" translatable="yes">Scan</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+            <child>
               <object class="GtkButton" id="button_add_menu_add">
                 <property name="label" translatable="yes">Add</property>
                 <property name="valign">center</property>

@@ -83,6 +83,7 @@ export default class AdwPrefs extends ExtensionPreferences {
 
     _addMenu(cmb_add, entry_add, builder) {
         if (entry_add.get_text() === "") {
+            console.log("_addMenu did not find entry_add text");
             return;
         }
         let strsettings;
@@ -131,6 +132,76 @@ export default class AdwPrefs extends ExtensionPreferences {
             "color-rgba",
             color_setting_button.get_rgba().to_string()
         );
+    }
+
+    _overtakeScanRow(builder, adwrow) {
+        const group_add = builder.get_object("messagingmenu_group_add");
+        const cmb_add = builder.get_object("messagingmenu_cmb_add");
+        const entry_add = builder.get_object("messagingmenu_row_add2");
+        if (adwrow) {
+            cmb_add.set_selected(adwrow.get_selected());
+            entry_add.set_text(adwrow.title);
+        }
+        group_add.remove(adwrow);
+        this._addMenu(cmb_add, entry_add, builder);
+    }
+
+    _addScanRow(builder, app, cmbid) {
+        const group_add = builder.get_object("messagingmenu_group_add");
+        const adwrow = new Adw.ComboRow({
+            title: app.get_id().slice(0, -8), // Remove .desktop suffix
+            subtitle: app.get_description(),
+        });
+        adwrow.set_tooltip_text(_("Found by scan"));
+        let stringlist = new Gtk.StringList();
+        stringlist.append(_("Email"));
+        stringlist.append(_("Chat"));
+        stringlist.append(_("Micro blogging"));
+        stringlist.append(_("Email notifier"));
+        stringlist.append(_("Micro blogging notifier"));
+        adwrow.set_model(stringlist);
+        adwrow.add_prefix(new Gtk.Image({ gicon: app.get_icon() }));
+        adwrow.set_selected(cmbid);
+        group_add.add(adwrow);
+        const button_add = new Gtk.Button({ label: _("Add") });
+        button_add.set_css_classes(["suggested-action"]);
+        button_add.valign = Gtk.Align.CENTER;
+        button_add.connect(
+            "clicked",
+            this._overtakeScanRow.bind(this, builder, adwrow)
+        );
+        adwrow.add_suffix(button_add);
+    }
+
+    _scanApps(builder, settings) {
+        const button_scan = builder.get_object("button_add_menu_scan");
+        button_scan.set_sensitive(false);
+        const apps = Gio.AppInfo.get_all();
+        const compatibleemails = settings.get_string("compatible-emails");
+        const compatiblechats = settings.get_string("compatible-chats");
+        const compatiblehiddenemailnotifiers = settings.get_string(
+            "compatible-hidden-email-notifiers"
+        );
+        for (const app of apps) {
+            const deskappinfo = Gio.DesktopAppInfo.new(app.get_id());
+            let categories = deskappinfo.get_categories();
+            let settingsapp = app.get_id().slice(0, -8); // Remove .desktop suffix
+            if (categories !== null && categories.includes("Email")) {
+                if (
+                    !compatibleemails.includes(settingsapp) &&
+                    !compatiblehiddenemailnotifiers.includes(settingsapp)
+                ) {
+                    this._addScanRow(builder, app, 0);
+                    console.log("Email app found:", app.get_id());
+                }
+            }
+            if (categories !== null && categories.includes("Chat")) {
+                if (!compatiblechats.includes(settingsapp)) {
+                    this._addScanRow(builder, app, 1);
+                    console.log("Chat app found:", app.get_id());
+                }
+            }
+        }
     }
 
     _page1(builder, settings, myAppChooser) {
@@ -207,14 +278,24 @@ export default class AdwPrefs extends ExtensionPreferences {
                 entry_add.set_text(appRow.subtitle.replace(".desktop", ""));
             }
         });
+        const button_scan = builder.get_object("button_add_menu_scan");
+        button_scan.set_tooltip_text(
+            _(
+                "Scan installed applications for compatible Email and Chat apps (Categories: Email, Chat)"
+            )
+        );
+        button_scan.connect(
+            "clicked",
+            this._scanApps.bind(this, builder, settings)
+        );
     }
 
     _addAppIcon(adwrow, appname) {
         const apps = Gio.AppInfo.get_all();
 
         for (const app of apps) {
-            if (appname.includes(app.get_name())) {
-                adwrow.subtitle = app.get_id();
+            if (appname.includes(app.get_id().slice(0, -8))) {
+                adwrow.subtitle = app.get_description();
                 const icon = new Gtk.Image({ gicon: app.get_icon() });
                 adwrow.add_prefix(icon);
                 return;
@@ -271,7 +352,7 @@ export default class AdwPrefs extends ExtensionPreferences {
         window.search_enabled = true;
         window.set_default_size(675, 700);
         const builder = Gtk.Builder.new();
-        builder.add_from_file(this.path + "/prefs.ui");
+        builder.add_from_file(this.path + "/ui/prefs.ui");
         const page1 = builder.get_object("messagingmenu_page_settings");
         window.add(page1);
         const myAppChooser = new AppChooser({

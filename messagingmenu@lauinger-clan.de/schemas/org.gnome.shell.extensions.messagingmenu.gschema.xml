@@ -28,20 +28,20 @@
     <key name="compatible-chats" type="s">
       <default>'amsn;caprine;chat.rocket.RocketChat;im.dino.Dino;emesene;empathy;fedora-empathy;gajim;hexchat;io.github.qtox.qTox;kadu;kde4-kmess;kde4-konversation;kde4-kopete;com.nextcloud.talk;openfetion;org.gnome.Fractal;org.gnome.Polari;org.telegram.desktop;pidgin;qtox;qutim;signal-desktop;skype;skypeforlinux;slack;telegramdesktop;utox;venom;viber;xchat;discord;Zoom'</default>
       <summary>Compatible Chats</summary>
-      <description>case sensitive name of the .desktop file names to start the app (without .desktop ending) delimited by semicolon</description>
+      <description>Case sensitive name of the .desktop file names to start the app (without .desktop ending) delimited by semicolon</description>
     </key>
     <key name="compatible-mblogs" type="s">
       <default>'birdie;corebird;fedora-gwibber;friends-app;gfeedline;gtwitter;gwibber;heybuddy;hotot;mitter;org.baedert.corebird;pino;polly;qwit;turpial;twitux;uk.co.ibboard.cawbird;com.github.bleakgrey.tootle'</default>
       <summary>Compatible MBlogs</summary>
-      <description>case sensitive name of the .desktop file names to start the app (without .desktop ending) delimited by semicolon</description>
+      <description>Case sensitive name of the .desktop file names to start the app (without .desktop ending) delimited by semicolon</description>
     </key>
     <key name="compatible-emails" type="s">
       <default>'claws-mail;evolution;geary;gnome-gmail;icedove;kde4-KMail2;mozilla-thunderbird;org.gnome.Evolution;org.gnome.Geary;postler;thunderbird'</default>
       <summary>Compatible Emails</summary>
-      <description>case sensitive name of the .desktop file names to start the app (without .desktop ending) delimited by semicolon</description>
+      <description>Case sensitive name of the .desktop file names to start the app (without .desktop ending) delimited by semicolon</description>
     </key>
     <key name="compatible-hidden-email-notifiers" type="s">
-      <default>'gmail-notify;mail-notification;Mailnag;Thunderbird'</default>
+      <default>'gmail-notify;mail-notification;mailnag;Thunderbird'</default>
       <summary>Compatible hidden Email Notifiers</summary>
       <description>Must be their Notificationtitle, because lookup_app does not work here</description>
     </key>

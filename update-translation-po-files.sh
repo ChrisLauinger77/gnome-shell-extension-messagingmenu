@@ -2,7 +2,7 @@
 
 reffile=messagingmenu.pot
 
-xgettext --from-code=UTF-8 --output=po/"$reffile" messagingmenu\@lauinger-clan.de/*.js messagingmenu\@lauinger-clan.de/*.ui messagingmenu\@lauinger-clan.de/schemas/*.xml
+xgettext --from-code=UTF-8 --output=po/"$reffile" messagingmenu\@lauinger-clan.de/*.js messagingmenu\@lauinger-clan.de/ui/*.ui messagingmenu\@lauinger-clan.de/schemas/*.xml
 
 cd po
 
