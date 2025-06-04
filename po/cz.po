@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Messaging Menu Version 4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 19:23+0200\n"
+"POT-Creation-Date: 2025-06-04 18:29+0200\n"
 "PO-Revision-Date: 2025-06-01 19:23+0200\n"
 "Last-Translator: Christian Lauinger <christian@lauinger-clan.de>\n"
 "Language-Team: Czech\n"
@@ -32,15 +32,15 @@ msgstr "Kontakty"
 msgid "Settings"
 msgstr "Nastavení"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:35
+#: messagingmenu@lauinger-clan.de/prefs.js:36
 msgid "Select"
 msgstr "Vybrat"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:38
+#: messagingmenu@lauinger-clan.de/prefs.js:39
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:77
+#: messagingmenu@lauinger-clan.de/prefs.js:78
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:55
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:105
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:116
@@ -48,86 +48,98 @@ msgstr "Zrušit"
 msgid "Name of .desktop files without .desktop ending"
 msgstr "Název souborů .desktop bez koncovky .desktop"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:80
+#: messagingmenu@lauinger-clan.de/prefs.js:81
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:138
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:144
 msgid "Notifier title"
 msgstr "Název upozornění"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:155
+#: messagingmenu@lauinger-clan.de/prefs.js:156
 msgid "Found by scan"
 msgstr ""
 
-#: messagingmenu@lauinger-clan.de/prefs.js:157
+#: messagingmenu@lauinger-clan.de/prefs.js:158
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:62
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:100
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:104
 msgid "Email"
 msgstr "Email"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:158
+#: messagingmenu@lauinger-clan.de/prefs.js:159
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:63
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:111
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:115
 msgid "Chat"
 msgstr "Chat"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:159
+#: messagingmenu@lauinger-clan.de/prefs.js:160
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:64
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:122
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:126
 msgid "Micro blogging"
 msgstr "Micro-blog"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:160
+#: messagingmenu@lauinger-clan.de/prefs.js:161
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:65
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:137
 msgid "Email notifier"
 msgstr "Upozornění na email"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:161
+#: messagingmenu@lauinger-clan.de/prefs.js:162
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:66
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:143
 msgid "Micro blogging notifier"
 msgstr "Upozornění na micro-blog"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:166
+#: messagingmenu@lauinger-clan.de/prefs.js:167
 #: messagingmenu@lauinger-clan.de/ui/prefs.ui:89
 msgid "Add"
 msgstr "Přidat"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:209
+#: messagingmenu@lauinger-clan.de/prefs.js:210
+msgid "Scan finished"
+msgstr ""
+
+#: messagingmenu@lauinger-clan.de/prefs.js:212
+#, javascript-format
+msgid "Scan found %d app"
+msgid_plural "Scan found %d apps"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: messagingmenu@lauinger-clan.de/prefs.js:220
 msgid "Toggle email notification"
 msgstr "Přepnout upozornění na email"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:217
+#: messagingmenu@lauinger-clan.de/prefs.js:228
 msgid "Toggle chat notification"
 msgstr "Přepnout upozornění na chat"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:227
+#: messagingmenu@lauinger-clan.de/prefs.js:238
 msgid "Toggle micro blogging notification"
 msgstr "Přepnout upozornění na micro-blog"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:236
+#: messagingmenu@lauinger-clan.de/prefs.js:247
 #: messagingmenu@lauinger-clan.de/schemas/org.gnome.shell.extensions.messagingmenu.gschema.xml:25
 msgid "Notification Color RGB"
 msgstr "Barva upozornění (RGB)"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:267
+#: messagingmenu@lauinger-clan.de/prefs.js:278
 msgid "Usually located in '/usr/share/applications'"
 msgstr "Obvykle se nachází v '/usr/share/applications'"
 
-#: messagingmenu@lauinger-clan.de/prefs.js:270
+#: messagingmenu@lauinger-clan.de/prefs.js:281
 msgid "..."
 msgstr "..."
 
-#: messagingmenu@lauinger-clan.de/prefs.js:284
+#: messagingmenu@lauinger-clan.de/prefs.js:295
 msgid ""
 "Scan installed applications for compatible Email and Chat apps (Categories: "
 "Email, Chat)"
 msgstr ""
 
-#: messagingmenu@lauinger-clan.de/prefs.js:359
+#: messagingmenu@lauinger-clan.de/prefs.js:370
 msgid "Select app"
 msgstr "Vybrat aplikaci"
 
