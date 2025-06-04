@@ -6,6 +6,7 @@ import GObject from "gi://GObject";
 import {
     ExtensionPreferences,
     gettext as _,
+    ngettext,
 } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
 const errorLog = (...args) => {
@@ -177,11 +178,13 @@ export default class AdwPrefs extends ExtensionPreferences {
         const button_scan = builder.get_object("button_add_menu_scan");
         button_scan.set_sensitive(false);
         const apps = Gio.AppInfo.get_all();
+        const adwrow = builder.get_object("messagingmenu_row_add3");
         const compatibleemails = settings.get_string("compatible-emails");
         const compatiblechats = settings.get_string("compatible-chats");
         const compatiblehiddenemailnotifiers = settings.get_string(
             "compatible-hidden-email-notifiers"
         );
+        let count = 0;
         for (const app of apps) {
             const deskappinfo = Gio.DesktopAppInfo.new(app.get_id());
             let categories = deskappinfo.get_categories();
@@ -193,15 +196,23 @@ export default class AdwPrefs extends ExtensionPreferences {
                 ) {
                     this._addScanRow(builder, app, 0);
                     console.log("Email app found:", app.get_id());
+                    count += 1;
                 }
             }
             if (categories !== null && categories.includes("Chat")) {
                 if (!compatiblechats.includes(settingsapp)) {
                     this._addScanRow(builder, app, 1);
                     console.log("Chat app found:", app.get_id());
+                    count += 1;
                 }
             }
         }
+        adwrow.set_title(_("Scan finished"));
+        adwrow.set_subtitle(
+            ngettext("Scan found %d app", "Scan found %d apps", count).format(
+                count
+            )
+        );
     }
 
     _page1(builder, settings, myAppChooser) {
