@@ -43,7 +43,7 @@ cd gnome-shell-extension-messagingmenu
 
 Now restart gnome-shell.
 
-## Developing
+## Contributing
 
 Pull requests are welcome.
 
