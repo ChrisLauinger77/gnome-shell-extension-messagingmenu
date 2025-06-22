@@ -13,13 +13,9 @@ import * as Main from "resource:///org/gnome/shell/ui/main.js";
 import * as Util from "resource:///org/gnome/shell/misc/util.js";
 import * as PanelMenu from "resource:///org/gnome/shell/ui/panelMenu.js";
 import * as PopupMenu from "resource:///org/gnome/shell/ui/popupMenu.js";
-import {
-    Extension,
-    gettext as _,
-} from "resource:///org/gnome/shell/extensions/extension.js";
+import { Extension, gettext as _ } from "resource:///org/gnome/shell/extensions/extension.js";
 
-const _rgbToHex = (r, g, b) =>
-    "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("");
+const _rgbToHex = (r, g, b) => "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("");
 
 const MessageMenuItem = GObject.registerClass(
     class MessageMenu_MessageMenuItem extends PopupMenu.PopupBaseMenuItem {
@@ -51,10 +47,7 @@ const MessageMenu = GObject.registerClass(
             this._intIcon_size = intIcon_size;
             super._init(0.0, "MessageMenu");
 
-            this._compatible_Chats = this._settings
-                .get_string("compatible-chats")
-                .split(";")
-                .sort();
+            this._compatible_Chats = this._settings.get_string("compatible-chats").split(";").sort();
             this._compatible_MBlogs = this._settings
                 .get_string("compatible-mblogs")
                 .split(";")
@@ -75,9 +68,7 @@ const MessageMenu = GObject.registerClass(
             const hbox = new St.BoxLayout({
                 style_class: "panel-status-menu-box",
             });
-            const gicon = Gio.icon_new_for_string(
-                Me.path + "/icons/mymail-symbolic.svg"
-            );
+            const gicon = Gio.icon_new_for_string(Me.path + "/icons/mymail-symbolic.svg");
             const icon = new St.Icon({
                 gicon,
                 style_class: "system-status-icon",
@@ -139,26 +130,15 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuEVOLUTION() {
-            const newLauncher = new MessageMenuItem(
-                this._evolution,
-                this._intIcon_size
-            );
+            const newLauncher = new MessageMenuItem(this._evolution, this._intIcon_size);
             this.menu.addMenuItem(newLauncher);
 
-            this.comp = new PopupMenu.PopupImageMenuItem(
-                this.new_msg_string + "...",
-                "mail-message-new-symbolic",
-                {
-                    style_class: "special-action",
-                }
-            );
-            this.con = new PopupMenu.PopupImageMenuItem(
-                this.contacts_string,
-                "contact-new-symbolic",
-                {
-                    style_class: "special-action",
-                }
-            );
+            this.comp = new PopupMenu.PopupImageMenuItem(this.new_msg_string + "...", "mail-message-new-symbolic", {
+                style_class: "special-action",
+            });
+            this.con = new PopupMenu.PopupImageMenuItem(this.contacts_string, "contact-new-symbolic", {
+                style_class: "special-action",
+            });
 
             this.con.connect("activate", this._evolutionContacts.bind(this));
             this.comp.connect("activate", this._evolutionCompose.bind(this));
@@ -167,26 +147,15 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuTHUNDERBIRD() {
-            const newLauncher = new MessageMenuItem(
-                this._thunderbird,
-                this._intIcon_size
-            );
+            const newLauncher = new MessageMenuItem(this._thunderbird, this._intIcon_size);
             this.menu.addMenuItem(newLauncher);
 
-            this.comp_tb = new PopupMenu.PopupImageMenuItem(
-                this.new_msg_string + "...",
-                "mail-message-new-symbolic",
-                {
-                    style_class: "special-action",
-                }
-            );
-            this.con_tb = new PopupMenu.PopupImageMenuItem(
-                this.contacts_string,
-                "contact-new-symbolic",
-                {
-                    style_class: "special-action",
-                }
-            );
+            this.comp_tb = new PopupMenu.PopupImageMenuItem(this.new_msg_string + "...", "mail-message-new-symbolic", {
+                style_class: "special-action",
+            });
+            this.con_tb = new PopupMenu.PopupImageMenuItem(this.contacts_string, "contact-new-symbolic", {
+                style_class: "special-action",
+            });
 
             this.comp_tb.connect("activate", this._TbCompose.bind(this));
             this.menu.addMenuItem(this.comp_tb);
@@ -196,10 +165,7 @@ const MessageMenu = GObject.registerClass(
         }
 
         _buildMenuICEDOVE() {
-            const newLauncher = new MessageMenuItem(
-                this._icedove,
-                this._intIcon_size
-            );
+            const newLauncher = new MessageMenuItem(this._icedove, this._intIcon_size);
             this.menu.addMenuItem(newLauncher);
 
             this.comp_icedove = new PopupMenu.PopupImageMenuItem(
@@ -207,79 +173,48 @@ const MessageMenu = GObject.registerClass(
                 "mail-message-new-symbolic",
                 { style_class: "special-action" }
             );
-            this.con_icedove = new PopupMenu.PopupImageMenuItem(
-                this.contacts_string,
-                "contact-new-symbolic",
-                {
-                    style_class: "special-action",
-                }
-            );
+            this.con_icedove = new PopupMenu.PopupImageMenuItem(this.contacts_string, "contact-new-symbolic", {
+                style_class: "special-action",
+            });
 
-            this.comp_icedove.connect(
-                "activate",
-                this._icedoveCompose.bind(this)
-            );
+            this.comp_icedove.connect("activate", this._icedoveCompose.bind(this));
             this.menu.addMenuItem(this.comp_icedove);
 
-            this.con_icedove.connect(
-                "activate",
-                this._icedoveContacts.bind(this)
-            );
+            this.con_icedove.connect("activate", this._icedoveContacts.bind(this));
             this.menu.addMenuItem(this.con_icedove);
         }
 
         _buildMenuKMAIL() {
-            const newLauncher = new MessageMenuItem(
-                this._kmail,
-                this._intIcon_size
-            );
+            const newLauncher = new MessageMenuItem(this._kmail, this._intIcon_size);
             this.menu.addMenuItem(newLauncher);
 
-            this.comp = new PopupMenu.PopupImageMenuItem(
-                this.new_msg_string + "...",
-                "mail-message-new-symbolic",
-                {
-                    style_class: "special-action",
-                }
-            );
+            this.comp = new PopupMenu.PopupImageMenuItem(this.new_msg_string + "...", "mail-message-new-symbolic", {
+                style_class: "special-action",
+            });
 
             this.comp.connect("activate", this._kmailCompose.bind(this));
             this.menu.addMenuItem(this.comp);
         }
 
         _buildMenuCLAWS() {
-            const newLauncher = new MessageMenuItem(
-                this._claws,
-                this._intIcon_size
-            );
+            const newLauncher = new MessageMenuItem(this._claws, this._intIcon_size);
             this.menu.addMenuItem(newLauncher);
 
-            this.comp = new PopupMenu.PopupImageMenuItem(
-                this.new_msg_string + "...",
-                "mail-message-new-symbolic",
-                {
-                    style_class: "special-action",
-                }
-            );
+            this.comp = new PopupMenu.PopupImageMenuItem(this.new_msg_string + "...", "mail-message-new-symbolic", {
+                style_class: "special-action",
+            });
 
             this.comp.connect("activate", this._clawsCompose.bind(this));
             this.menu.addMenuItem(this.comp);
         }
 
         _buildMenuGEARY() {
-            const newLauncher = new MessageMenuItem(
-                this._geary,
-                this._intIcon_size
-            );
+            const newLauncher = new MessageMenuItem(this._geary, this._intIcon_size);
             this.menu.addMenuItem(newLauncher);
 
-            this.comp = new PopupMenu.PopupImageMenuItem(
-                this.new_msg_string + "...",
-                "mail-message-new-symbolic",
-                {
-                    style_class: "special-action",
-                }
-            );
+            this.comp = new PopupMenu.PopupImageMenuItem(this.new_msg_string + "...", "mail-message-new-symbolic", {
+                style_class: "special-action",
+            });
 
             this.comp.connect("activate", this._gearyCompose.bind(this));
             this.menu.addMenuItem(this.comp);
@@ -287,38 +222,27 @@ const MessageMenu = GObject.registerClass(
 
         _buildMenu(Me) {
             for (let e_app of this._availableEmails) {
-                let newLauncher = new MessageMenuItem(
-                    e_app,
-                    this._intIcon_size
-                );
+                let newLauncher = new MessageMenuItem(e_app, this._intIcon_size);
                 this.menu.addMenuItem(newLauncher);
             }
             this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 
             // insert Chat Clients into menu
             for (let c_app of this._availableChats) {
-                let newLauncher = new MessageMenuItem(
-                    c_app,
-                    this._intIcon_size
-                );
+                let newLauncher = new MessageMenuItem(c_app, this._intIcon_size);
                 this.menu.addMenuItem(newLauncher);
             }
             this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
 
             // insert Blogging Clients into menu
             for (let mb_app of this._availableMBlogs) {
-                let newLauncher = new MessageMenuItem(
-                    mb_app,
-                    this._intIcon_size
-                );
+                let newLauncher = new MessageMenuItem(mb_app, this._intIcon_size);
                 this.menu.addMenuItem(newLauncher);
             }
 
             // Add an entry-point for settings
             this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-            const settingsItem = this.menu.addAction(_("Settings"), () =>
-                Me._openPreferences()
-            );
+            const settingsItem = this.menu.addAction(_("Settings"), () => Me._openPreferences());
             // Ensure the settings are unavailable when the screen is locked
             settingsItem.visible = Main.sessionMode.allowSettings;
             this.menu._settingsActions[Me.uuid] = settingsItem;
@@ -443,27 +367,18 @@ export default class MessagingMenu extends Extension {
                 if (this._settings.get_boolean("notify-email")) {
                     newMessage =
                         this._checkNotifyEmailByID(source) ||
-                        this._checkHiddenNotifierMatch(
-                            source,
-                            this._indicator.compatibleHiddenEmailNotifiers
-                        );
+                        this._checkHiddenNotifierMatch(source, this._indicator.compatibleHiddenEmailNotifiers);
                 }
             } else {
                 if (this._settings.get_boolean("notify-email")) {
                     newMessage =
                         this._checkNotifyEmailByName(source) ||
-                        this._checkHiddenNotifierMatch(
-                            source,
-                            this._indicator.compatibleHiddenEmailNotifiers
-                        );
+                        this._checkHiddenNotifierMatch(source, this._indicator.compatibleHiddenEmailNotifiers);
                 }
                 if (this._settings.get_boolean("notify-mblogging")) {
                     newMessage =
                         newMessage ||
-                        this._checkHiddenNotifierMatch(
-                            source,
-                            this._indicator.compatibleHiddenMBlogNotifiers
-                        );
+                        this._checkHiddenNotifierMatch(source, this._indicator.compatibleHiddenMBlogNotifiers);
                 }
             }
         }
@@ -476,11 +391,7 @@ export default class MessagingMenu extends Extension {
         if (source.app) {
             for (let notifier of this._indicator.AvailableNotifiers) {
                 let app_id = notifier.get_id(); //e.g. thunderbird.desktop
-                if (
-                    app_id
-                        .toLowerCase()
-                        .includes(source.app.get_id().toLowerCase())
-                ) {
+                if (app_id.toLowerCase().includes(source.app.get_id().toLowerCase())) {
                     result = true;
                 }
             }
@@ -493,9 +404,7 @@ export default class MessagingMenu extends Extension {
         if (source.title) {
             for (let notifier of this._indicator.AvailableNotifiers) {
                 let app_name = notifier.get_name(); //e.g. Thunderbird Mail
-                if (
-                    app_name.toLowerCase().includes(source.title.toLowerCase())
-                ) {
+                if (app_name.toLowerCase().includes(source.title.toLowerCase())) {
                     result = true;
                 }
             }
@@ -507,9 +416,7 @@ export default class MessagingMenu extends Extension {
         let result = false;
         if (source.title) {
             for (let notifier of notifiers) {
-                if (
-                    notifier.toLowerCase().includes(source.title.toLowerCase())
-                ) {
+                if (notifier.toLowerCase().includes(source.title.toLowerCase())) {
                     result = true;
                 }
             }
@@ -522,15 +429,8 @@ export default class MessagingMenu extends Extension {
         if (newMessage && !this._iconChanged) {
             let color;
             let strcolor = this._settings.get_string("color-rgba");
-            let arrColor = strcolor
-                .replace("rgb(", "")
-                .replace(")", "")
-                .split(",");
-            color = _rgbToHex(
-                parseInt(arrColor[0]),
-                parseInt(arrColor[1]),
-                parseInt(arrColor[2])
-            );
+            let arrColor = strcolor.replace("rgb(", "").replace(")", "").split(",");
+            color = _rgbToHex(parseInt(arrColor[0]), parseInt(arrColor[1]), parseInt(arrColor[2]));
             this._iconBox.set_style("color: " + color + ";");
             this._iconChanged = true;
         } else if (!newMessage && this._iconChanged) {
@@ -574,27 +474,16 @@ export default class MessagingMenu extends Extension {
         this._indicator = new MessageMenu(this, icon_size);
 
         // add Signals to array
-        this._SignalsArray = [];
-        this._SignalsArray.push(
-            Main.messageTray.connect(
-                "queue-changed",
-                this._queuechanged.bind(this)
-            )
-        );
-
+        this._settingSignals = [];
         const settingsToMonitor = [
             { key: "compatible-chats", callback: "onParamChanged" },
             { key: "compatible-mblogs", callback: "onParamChanged" },
             { key: "compatible-emails", callback: "onParamChanged" },
             { key: "icon-size", callback: "onParamChanged" },
         ];
-
         settingsToMonitor.forEach((setting) => {
-            this._SignalsArray.push(
-                this._settings.connect(
-                    `changed::${setting.key}`,
-                    this[setting.callback].bind(this)
-                )
+            this._settingSignals.push(
+                this._settings.connect(`changed::${setting.key}`, this[setting.callback].bind(this))
             );
         });
 
@@ -605,14 +494,19 @@ export default class MessagingMenu extends Extension {
         this._iconBox = statusArea.messageMenu;
         this._iconChanged = false;
         this._originalStyle = this._iconBox.get_style();
+        this._messageTraySignal = Main.messageTray.connect("queue-changed", this._queuechanged.bind(this));
     }
 
     disable() {
         // remove setting Signals
-        this._SignalsArray.forEach(function (signal) {
+        this._settingSignals.forEach(function (signal) {
             this._settings.disconnect(signal);
         }, this);
-        this._SignalsArray = null;
+        this._settingSignals = null;
+        if (this._messageTraySignal !== null) {
+            Main.messageTray.disconnect(this._messageTraySignal);
+        }
+        this._messageTraySignal = null;
         this._indicator.destroy();
         this._indicator = null;
         this._settings = null;
