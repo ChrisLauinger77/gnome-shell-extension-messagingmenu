@@ -9,15 +9,6 @@ import {
     ngettext,
 } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
-const errorLog = (...args) => {
-    console.error("[MessagingMenu]", "Error:", ...args);
-};
-
-const handleError = (error) => {
-    errorLog(error);
-    return null;
-};
-
 const AppChooser = GObject.registerClass(
     class AppChooser extends Adw.Window {
         constructor(params = {}) {
@@ -259,6 +250,13 @@ export default class AdwPrefs extends ExtensionPreferences {
         entry_add.add_suffix(buttonfilechooser);
         entry_add.activatable_widget = buttonfilechooser;
         buttonfilechooser.connect("clicked", async () => {
+            const errorLog = (...args) => {
+                this.getlogger().error("Error:", ...args);
+            };
+            const handleError = (error) => {
+                errorLog(error);
+                return null;
+            };
             const appRow = await myAppChooser.showChooser().catch(handleError);
             if (appRow !== null) {
                 entry_add.set_text(appRow.subtitle.replace(".desktop", ""));
