@@ -79,7 +79,7 @@ export default class AdwPrefs extends ExtensionPreferences {
 
     _addMenu(cmb_add, entry_add, builder) {
         if (entry_add.get_text() === "") {
-            console.log("_addMenu did not find entry_add text");
+            this.getLogger().log("_addMenu did not find entry_add text");
             return;
         }
         let strsettings;
@@ -106,7 +106,7 @@ export default class AdwPrefs extends ExtensionPreferences {
                 strgroup = "messagingmenu_group_mblognotifiers";
                 break;
             default:
-                console.log("_addMenu did not find get_active_id");
+                this.getLogger().log("_addMenu did not find get_active_id");
         }
         let valuesettings = this.getSettings().get_string(strsettings);
         if (!valuesettings.toLowerCase().includes(entry_add.text.toLowerCase())) {
@@ -115,6 +115,35 @@ export default class AdwPrefs extends ExtensionPreferences {
             const adwrow = new Adw.ActionRow({ title: entry_add.text });
             group.add(adwrow);
             entry_add.text = "";
+        }
+    }
+
+    _findWidgetByType(parent, type) {
+        for (const child of [...parent]) {
+            if (child instanceof type) return child;
+
+            const match = this._findWidgetByType(child, type);
+            if (match) return match;
+        }
+        return null;
+    }
+
+    _addResetButton(window, settings) {
+        const button = new Gtk.Button({
+            label: _("Reset Settings"),
+            icon_name: "edit-clear",
+            css_classes: ["destructive-action"],
+            vexpand: true,
+            valign: Gtk.Align.END,
+        });
+        button.set_tooltip_text(_("Reset all settings to default values"));
+        button.connect("clicked", () => {
+            this._resetSettings(settings, "all");
+        });
+
+        const header = this._findWidgetByType(window.get_content(), Adw.HeaderBar);
+        if (header) {
+            header.pack_start(button);
         }
     }
 
@@ -174,14 +203,14 @@ export default class AdwPrefs extends ExtensionPreferences {
             if (categories !== null && categories.includes("Email")) {
                 if (!compatibleemails.includes(settingsapp) && !compatiblehiddenemailnotifiers.includes(settingsapp)) {
                     this._addScanRow(builder, app, 0);
-                    console.log("Email app found:", app.get_id());
+                    this.getLogger().log("Email app found:", app.get_id());
                     count += 1;
                 }
             }
             if (categories !== null && categories.includes("Chat")) {
                 if (!compatiblechats.includes(settingsapp)) {
                     this._addScanRow(builder, app, 1);
-                    console.log("Chat app found:", app.get_id());
+                    this.getLogger().log("Chat app found:", app.get_id());
                     count += 1;
                 }
             }
@@ -336,6 +365,7 @@ export default class AdwPrefs extends ExtensionPreferences {
         window.add(page4);
         const page5 = builder.get_object("messagingmenu_page_notifiers");
         window.add(page5);
+        this._addResetButton(window, this.getSettings());
         this._page1(builder, this.getSettings(), myAppChooser);
         this._pages(builder, this.getSettings());
     }
