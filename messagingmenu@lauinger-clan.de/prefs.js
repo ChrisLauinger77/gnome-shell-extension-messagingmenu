@@ -280,7 +280,7 @@ export default class AdwPrefs extends ExtensionPreferences {
         entry_add.activatable_widget = buttonfilechooser;
         buttonfilechooser.connect("clicked", async () => {
             const errorLog = (...args) => {
-                this.getlogger().error("Error:", ...args);
+                this.getLogger().error("Error:", ...args);
             };
             const handleError = (error) => {
                 errorLog(error);
