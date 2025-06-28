@@ -7,7 +7,7 @@ gnome-extensions pack --podir=../po/ --out-dir=../ --extra-source=\ui --extra-so
 cd ..
 mv messagingmenu@lauinger-clan.de.shell-extension.zip messagingmenu@lauinger-clan.de.zip
 
-if [ "$1" = "zip" ]; then
+if [ "$1" = "zip" ] || [ "$1" = "pack" ]; then
    echo "Extension zip created ..."
 else
    gnome-extensions install messagingmenu\@lauinger-clan.de.zip --force
