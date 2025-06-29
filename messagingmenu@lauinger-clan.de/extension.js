@@ -455,7 +455,7 @@ export default class MessagingMenu extends Extension {
         } catch (err) {
             /* If the extension is broken I don't want to break everything.
              * We just catch the extension, print it and go on */
-            console.error(err, "messagingmenu");
+            this.getLogger().error(err);
         }
     }
 
